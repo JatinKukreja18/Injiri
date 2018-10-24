@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Injiri Theme functions and definitions
@@ -116,6 +117,52 @@ function injiri_theme_widgets_init() {
 }
 add_action( 'widgets_init', 'injiri_theme_widgets_init' );
 
+
+/* NEW POST CREATION - TECHNIQUES */
+
+function cw_post_type_techniques() {
+
+	$supports = array(
+	'title', // post title
+	'editor', // post content
+	'author', // post author
+	'thumbnail', // featured images
+	'excerpt', // post excerpt
+	'custom-fields', // custom fields
+	'comments', // post comments
+	'revisions', // post revisions
+	'post-formats', // post formats
+	);
+	
+	$labels = array(
+	'name' => _x('techniques', 'plural'),
+	'singular_name' => _x('technique', 'singular'),
+	'menu_name' => _x('Techniques', 'admin menu'),
+	'name_admin_bar' => _x('Techniques', 'admin bar'),
+	'add_new' => _x('Add New', 'add new'),
+	'add_new_item' => __('Add New Technique'),
+	'new_item' => __('New technique'),
+	'edit_item' => __('Edit technique'),
+	'view_item' => __('View technique'),
+	'all_items' => __('All Techniques'),
+	'search_items' => __('Search Techniques'),
+	'not_found' => __('No techniques found.'),
+	);
+	
+	$args = array(
+	'supports' => $supports,
+	'labels' => $labels,
+	'public' => true,
+	'query_var' => true,
+	'rewrite' => array('slug' => 'techniques'),
+	'has_archive' => true,
+	'hierarchical' => false,
+	);
+	register_post_type('techniques', $args);
+	}
+	add_action('init', 'cw_post_type_techniques');
+	
+	/*Custom Post type end*/
 /**
  * Enqueue scripts and styles.
  */
@@ -131,6 +178,7 @@ function injiri_theme_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'injiri_theme_scripts' );
+
 
 /**
  * Implement the Custom Header feature.
