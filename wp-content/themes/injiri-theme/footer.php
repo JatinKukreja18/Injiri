@@ -13,21 +13,32 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="site-footer footerContainer">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'injiri-theme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'injiri-theme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
+			
+				<!-- <php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'injiri-theme' ), 'injiri-theme', '<a href="http://underscores.me/">Jatin Kukreja / Shambhavi Ojha</a>' );
-				?>
+				printf( 'Designed by Shambhavi Ojha | Developed by Jatin Kukreja ');
+				> -->
 		</div><!-- .site-info -->
+		<div class="footerContent">
+            <div class="emailInputContainer">
+                <span>
+                    <input name="email" class="inputEmail" type="text" placeholder="Enter Email">
+                </span>
+            </div>
+            <div>
+                <ul class="footerMenus blackHover">
+                    <li class="footerItem"><a class="menusLink" href="">Subscribe</a></li>
+                    <li class="footerItem"><a class="menusLink" href="">Facebook</a></li>
+                    <li class="footerItem"><a class="menusLink" href="">Instagram</a></li>
+                    <li class="footerItem"><a class="menusLink" href="">Privacy Policy</a></li>
+                    <li class="footerItem"> &copy; 2018 INJIRI </li>
+                </ul>
+            </div>
+        </div>
 	</footer><!-- #colophon -->
+	
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

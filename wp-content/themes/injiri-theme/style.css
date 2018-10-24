@@ -559,8 +559,8 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
+	/* border: 1px solid #ccc; */
+	/* border-radius: 3px; */
 	padding: 3px;
 }
 
@@ -598,15 +598,15 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: #000;
+	color: inherit;
 }
 
 a:visited {
-	color: #000;
+	color: inherit;
 }
 
 a:hover, a:focus, a:active {
-	color: #000;
+	color: inherit;
 }
 
 a:focus {
@@ -837,7 +837,7 @@ a:hover, a:active {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	/* margin: 1.5em 0 0; */
 }
 
 .page-links {
@@ -970,3 +970,455 @@ object {
 /* 
 	Addtional Custom Css
 */
+
+/* Standar CSS */
+
+input,
+button {
+    outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    padding: 0;
+    list-style-type: none;
+    /* margin-bottom: 0 !important;
+    margin-top: 0; */
+    margin: 0 !important;
+}
+
+a {
+    text-decoration: none;
+    background-color: inherit !important;
+}
+
+textarea,
+a:focus,
+a:hover {
+    text-decoration: none ;
+    outline: 0px auto -webkit-focus-ring-color ;
+    color: inherit ;
+}
+
+
+/* Standar CSS */
+
+
+/* Home Page CSS */
+
+.video {
+    width: 100%;
+    object-fit: cover;
+    min-height: 100vh;
+}
+
+.homeVid {
+    position: relative;
+    margin-bottom: 279px;
+    z-index: 100;
+    width: 100%;
+}
+
+.menus .menusItem:last-child {
+    padding-bottom: 0;
+}
+
+.menu-item {
+    padding-bottom: 25px;
+    text-transform: uppercase;
+    font-size: 12.5px;
+    letter-spacing: 3px;
+    font-family: 'Gentium Basic';
+    line-height: 1em;
+}
+.menu-item > a{
+	color: #fff;
+	transition: .3s;
+	outline:none;
+	position: relative;
+}
+.menu-item > a:hover{
+	color: #000;
+}
+.menu-item > a:hover::before {
+	width: 100%;
+	color: #fff;	
+}
+
+.menu-item > a::before {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    height: 2px;
+    width: 0;
+    bottom: -3px;
+    transition: 0.6s;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menulogoContainer {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 50px 90px;
+    z-index: 1;
+}
+.menulogoContainer > .menu-menu-1-container{
+	position: absolute;
+	top:calc(100% + 70px);
+	left: 90px;
+	width: auto;
+}
+.custom-logo-link{
+	display: block;
+    height: 8px;
+    font-size: 8px;
+    margin: 0px;
+}
+.custom-logo-link > img{
+	width: auto;
+    height: 8px;
+}
+
+
+.homeHeader {
+    background-color: unset;
+}
+
+.site-content{
+	margin-bottom: 280px;
+}
+/* Home Page CSS */
+
+
+/* For Footer CSS */
+
+.footerContainer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 60px 90px 46px 90px;
+    position: fixed;
+    bottom: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+.footerContent {
+    width: 210px;
+    min-width: 15%;
+}
+
+.emailInputContainer {
+    padding-bottom: 7px;
+}
+
+input.inputEmail {
+    border: none;
+    padding: 0;
+    color: #a0a0a0;
+    border-bottom: 1px solid #a9a7a7;
+    background: none;
+    width: 100%;
+    font-size: 11px;
+    font-style: italic;
+    padding-bottom: 1px;
+}
+
+.inputEmail:focus {
+    border-bottom: 1px solid black;
+}
+
+.footerMenus li:first-child {
+    padding-bottom: 28px;
+}
+
+.footerMenus li:last-child {
+    padding-bottom: 0;
+}
+
+.footerItem{
+	line-height: 10px;
+    padding-bottom: 14px;
+    font-family: 'Conv_GenBasR';
+    list-style: none;
+    letter-spacing: 3px;
+	font-size: 10px;
+	transition: .3s;
+	color: rgb(160, 160, 160);
+	text-transform: uppercase;
+}
+.footerItem >a {
+	transition: .5s;
+}
+.footerItem>a:hover{
+	color: #000;
+}
+
+
+
+.blackHover:hover .footerItem .menusLink::before,
+.blackHover:hover .menusItem .menusLink::before {
+    background-color: black;
+}
+
+
+/* For Footer CSS */
+
+
+/* For Hamburger */
+
+.mobileMenusContainer {
+    position: fixed;
+    top: 0;
+    padding: 85px 25px;
+    background-color: #fff;
+    width: 300px;
+    right: 0;
+    height: 100%;
+    transform: translateX(50%);
+    transition: 0.5s;
+    z-index: 99999;
+    opacity: 0;
+}
+
+.mobileMenusContainer.open {
+    transform: translateX(0);
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+
+.mobileMenusContainer.open .mobileMensu .menusItem {
+    transform: translate(0);
+    opacity: 1;
+}
+
+.mobileMenusContainer.open .mobileMensu .menusItem:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+.mobileMenusContainer.open .mobileMensu .menusItem:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.mobileMenusContainer.open .mobileMensu .menusItem:nth-child(3) {
+    transition-delay: 0.6s;
+}
+
+.mobileMenusContainer.open .mobileMensu .menusItem:nth-child(4) {
+    transition-delay: 0.8s;
+}
+
+.mobileMenusContainer.open .mobileMensu .menusItem:nth-child(5) {
+    transition-delay: 1s;
+}
+
+.mobileMensu .menusItem {
+    color: black;
+    font-size: 15px;
+    border-bottom: 1px solid;
+    padding-bottom: 4px;
+    margin-bottom: 30px;
+    transform: translate(110%);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.hamContainer {
+    position: fixed;
+    width: 30px;
+    height: 23px;
+    top: 31px;
+    cursor: pointer;
+    z-index: 999999;
+    right: 26px;
+}
+
+.hamLine {
+    transition: 0.5s;
+    background-color: #fff;
+    width: 14px;
+    height: 2px;
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+
+.hamSecond {
+    top: 0px;
+}
+
+.hamThird,
+.hamFourth {
+    top: 8px;
+}
+
+.hamFourth,
+.hamSixth,
+.hamSecond {
+    left: 14px;
+}
+
+.hamFifth,
+.hamSixth {
+    top: 16px;
+}
+
+.hamContainer.animate .hamLine {
+    background-color: red;
+}
+
+.hamContainer.animate .hamLine.hamThird,
+.hamContainer.animate .hamLine.hamFourth {
+    opacity: 0;
+}
+
+.hamContainer.animate .hamLine.hamThird {
+    transform: translateX(-18px);
+}
+
+.hamContainer.animate .hamLine.hamFourth {
+    transform: translateX(18px);
+}
+
+.hamContainer.animate .hamLine.hamFirst {
+    transform: rotate(45deg) translate(4.3px, -1px);
+}
+
+.hamContainer.animate .hamLine.hamSecond {
+    transform: rotate(-45deg) translate(-4px, -1px);
+    left: 18px;
+}
+
+.hamContainer.animate .hamLine.hamFifth {
+    transform: rotate(-45deg) translate(2.3px, -2px);
+    left: 3px;
+}
+
+.hamContainer.animate .hamLine.hamSixth {
+    transform: rotate(45deg) translate(-3px, -2.3px);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    height: 100%;
+    z-index: 9999;
+    opacity: 0.6;
+    pointer-events: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.overlay.showOverlay {
+    pointer-events: unset;
+    opacity: 0.6;
+}
+
+
+/* For Hamburger */
+
+
+/* Reach Page Css Start Here */
+
+.threeHundredFive {
+    position: relative;
+    margin: 184px 7% 184px 33%;
+    z-index: 1001;
+}
+
+.unfixed {
+    position: unset;
+}
+
+.noMargin {
+    margin: 0;
+}
+
+.whiteMenus .menusItem {
+    color: #bdbaba;
+    font-weight: bold;
+}
+
+.hamLineRed .hamLine {
+    background-color: black;
+}
+
+.accordion-spacing {
+    text-transform: uppercase;
+}
+
+.stockists {
+    padding-bottom: 56px;
+    font-family: 'Conv_GenBasR';
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.off .accordionItemContent {
+    height: 0px;
+    transition: height 1s ease-out;
+    transform: scaleY(0);
+    float: left;
+    display: block;
+}
+
+.open .accordionItemContent {
+    display: block;
+}
+
+.open .accordionItemHeading {
+    color: #7f8c8d;
+}
+
+.reached * {}
+
+
+/* Reach Page Css Start Here */
+
+
+/* For Responsiveness */
+
+@media (max-width:500px) {
+    .menulogoContainer {
+        padding: 30px 28px;
+    }
+    .logoContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 0;
+    }
+    .menus {
+        display: none;
+    }
+    .threeHundredFive {
+        position: unset;
+    }
+}
+
+@media (min-width:500px) {
+    .hamContainer,
+    .overlay {
+        display: none;
+    }
+    .logo {
+        opacity: 1;
+    }
+    .mobileMenusContainer {
+        display: none;
+    }
+}
+
+
+/* For Responsiveness */
