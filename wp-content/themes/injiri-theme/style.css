@@ -480,23 +480,7 @@ hr {
 	margin-bottom: 1.5em;
 }
 
-ul, ol {
-	margin: 0 0 1.5em 3em;
-}
 
-ul {
-	list-style: disc;
-}
-
-ol {
-	list-style: decimal;
-}
-
-li > ul,
-li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
-}
 
 dt {
 	font-weight: bold;
@@ -614,15 +598,15 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #000;
 }
 
 a:visited {
-	color: purple;
+	color: #000;
 }
 
 a:hover, a:focus, a:active {
-	color: midnightblue;
+	color: #000;
 }
 
 a:focus {
@@ -982,3 +966,7 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+/* 
+	Addtional Custom Css
+*/
