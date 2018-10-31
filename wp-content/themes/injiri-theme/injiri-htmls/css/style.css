@@ -395,6 +395,227 @@ a:hover {
 
 /* Reach Page Css Start Here */
 
+.threeTwenty {
+    position: relative;
+    margin: 184px 7% 184px 33%;
+    z-index: 1001;
+}
+
+.unfixed {
+    position: unset;
+}
+
+.noMargin {
+    margin: 0;
+}
+
+.whiteMenus .menusItem {
+    color: #bdbaba;
+    font-weight: bold;
+}
+
+.hamLineRed .hamLine {
+    background-color: black;
+}
+
+.accordion-spacing {
+    text-transform: uppercase;
+}
+
+.stockists {
+    padding-bottom: 56px;
+    font-family: 'Conv_GenBasR';
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.off .accordionItemContent {
+    height: 0px;
+    overflow: hidden;
+}
+
+.on .accordionItemContent,
+.on .accordionItemContent {
+    height: auto;
+    margin-bottom: 0;
+}
+
+.on .bottomhundreen {
+    padding-bottom: 100px;
+}
+
+.on .accordionItemHeading {
+    color: #7f8c8d;
+}
+
+.accordionItem .accordionItemHeading {
+    cursor: pointer;
+}
+
+.bothTwentyFive {
+    padding: 0px 25px;
+}
+
+.subLocation {
+    margin-top: 0;
+    color: black;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.bottomthirty {
+    margin-bottom: 30px;
+}
+
+.accordionItemHeading {
+    font-size: 15px;
+    font-family: 'Conv_GenBasR';
+    color: #444141;
+    letter-spacing: 2px;
+}
+
+.bottomSeventy {
+    padding-top: 70px;
+}
+
+.addresContainer .bottomthirty:last-child {
+    margin-bottom: 0;
+}
+
+.address {
+    font-family: 'Conv_GenBasR';
+    letter-spacing: 2px;
+    font-size: 12px;
+    padding-bottom: 3px;
+    text-transform: uppercase;
+}
+
+.address:last-child {
+    padding-bottom: 0;
+}
+
+.oneSixtyEight {
+    padding-bottom: 168px;
+}
+
+.bottomFiftySix {
+    margin: 0;
+    padding-bottom: 56px;
+}
+
+.enquires {
+    font-size: 14px;
+    font-family: 'Conv_GenBasR';
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: black;
+    margin-top: 0;
+}
+
+.sixtyFive {
+    padding-bottom: 65px;
+}
+
+.press {
+    font-size: 12px;
+}
+
+.socialMedia {
+    padding-bottom: 2px;
+}
+
+.socialMedia:last-child {
+    padding-bottom: 0;
+}
+
+.fortySix {
+    margin: 0;
+    padding-bottom: 46px;
+}
+
+.flex {
+    display: flex
+}
+
+.widthFull {
+    width: 100%;
+    padding-right: 20px;
+}
+
+.textField {
+    padding: 0;
+    border: none;
+    border-bottom: 2px solid black;
+    font-style: italic;
+    font-family: 'Conv_GenBasR';
+    font-size: 16px;
+    color: black;
+    width: 100%;
+    resize: none;
+    background-color: unset;
+    border-radius: 0px;
+    outline: none;
+}
+
+.select {
+    color: #8a8a8a;
+}
+
+.inputRow {
+    margin-bottom: 20px;
+}
+
+.inputRow div:last-child {
+    padding-right: 0;
+}
+
+[type="select"] {
+    background-image: url(../assets/icons/down-aero.svg);
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    -webkit-appearance: none;
+    outline: none;
+}
+
+.inputsContainer .inputRow:last-child {
+    margin-bottom: 0;
+}
+
+.submit {
+    border: none;
+    padding: 0;
+    font-family: 'Conv_GenBasR';
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #928f8f;
+    font-size: 16px;
+    transition: 0.5s;
+    background-color: unset;
+}
+
+.submit:hover {
+    border: 1px solid black;
+    padding: 11px 21px;
+    background-color: black;
+    color: #fff;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+
+/* Reach Page Css Start Here */
+
+
+/* Reach Page Css Start Here */
+
 
 /* For Responsiveness */
 
