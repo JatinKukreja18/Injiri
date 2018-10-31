@@ -57,8 +57,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 html {
 	line-height: 1.15; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
-}
+	box-sizing: border-box;
 
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 /* Sections
 	 ========================================================================== */
 
@@ -1010,6 +1016,13 @@ a:hover {
 /* Standard CSS ends*/
 
 /* Custom Grid Css */
+.row {
+    margin-right: -6px;
+	margin-left: -6px;
+	display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col,
 .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm,
 .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md,
@@ -1019,10 +1032,19 @@ a:hover {
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 6px;
+  padding-left: 6px;
+}
+.collapse{
+	padding: 0px;
+}
+.collapse-left{
+	padding-left: 0px;
 }
 
+.collapse-right{
+	padding-left: 0px;
+}
 .col {
   -ms-flex-preferred-size: 0;
   flex-basis: 0;
@@ -1259,10 +1281,60 @@ a:hover {
 	  max-width: 100%;
 	}
 }
+.offset-1 {
+	margin-left: 8.333333%;
+  }
+  
+  .offset-2 {
+	margin-left: 16.666667%;
+  }
+  
+  .offset-3 {
+	margin-left: 25%;
+  }
+  
+  .offset-4 {
+	margin-left: 33.333333%;
+  }
+  
+  .offset-5 {
+	margin-left: 41.666667%;
+  }
+  
+  .offset-6 {
+	margin-left: 50%;
+  }
+  
+  .offset-7 {
+	margin-left: 58.333333%;
+  }
+  
+  .offset-8 {
+	margin-left: 66.666667%;
+  }
+  
+  .offset-9 {
+	margin-left: 75%;
+  }
+  
+  .offset-10 {
+	margin-left: 83.333333%;
+  }
+  
+  .offset-11 {
+	margin-left: 91.666667%;
+  }
 /* Custom Grid Css end*/
 
 /* Home Page CSS */
-
+.injiri-wrapper{
+	/* margin-bottom: 280px; */
+	min-height: 100vh;
+	max-width: 1280px;
+	overflow-x: hidden;
+    background: #fff;
+    padding: 138px 90px 60px 90px;
+}
 .video {
     width: 100%;
     object-fit: cover;
