@@ -1333,7 +1333,7 @@ a:hover {
 	max-width: 1280px;
 	overflow-x: hidden;
     background: #fff;
-    padding: 138px 90px 60px 90px;
+    padding: 188px 90px 60px 90px;
 }
 .video {
     width: 100%;
@@ -1357,16 +1357,26 @@ a:hover {
     text-transform: uppercase;
     font-size: 12.5px;
     letter-spacing: 3px;
-    font-family: 'Gentium Basic';
+    font-family: 'Gentium Basic', serif;
     line-height: 1em;
 }
+.menu-item:hover{
+	letter-spacing: 2px;
+}
+.injiri-header-home.injiri-header 
 .menu-item > a{
 	color: #fff;
+}
+.injiri-header 
+.menu-item > a,
+.mobileMenusContainer.open  .menu-item >a{
+	color: #A0A0A0;
 	transition: .3s;
 	outline:none;
 	position: relative;
 }
-.menu-item > a:hover{
+.injiri-header
+.menu-item > a:hover,.mobileMenusContainer.open  .menu-item >a:hover{
 	color: #000;
 }
 /* .menu-item > a:hover::before {
@@ -1387,7 +1397,7 @@ a:hover {
 } */
 
 .menulogoContainer {
-    background-color: #fff;
+    background-color: transparent;
     position: fixed;
     top: 0;
     width: 100%;
@@ -1396,24 +1406,26 @@ a:hover {
 }
 .menulogoContainer > .menu-menu-1-container{
 	position: absolute;
-	top:calc(100% + 70px);
+	top:calc(100% + 55px);
 	left: 90px;
 	width: auto;
 	max-width: 174px;
 }
 .custom-logo-link{
-	display: block;
-    height: 8px;
+	display: inline-block;
+    /* height: 8px; */
     font-size: 8px;
-    margin: 0px;
+	margin: 0px;
+	padding: 10px 0px;
+	max-width: 184px;
 }
 .custom-logo-link > img{
 	width: auto;
-    height: 8px;
+    /* height: 8px; */
 }
 
 
-.homeHeader {
+.injiri-header-home {
     background-color: unset;
 }
 
@@ -1466,7 +1478,7 @@ a:hover {
 .footer-sections >#footer-sidebar3 .widget_text > .widget-title{
 	line-height: 10px;
     padding-bottom: 14px;
-    font-family: 'Gentium Basic';
+    font-family: 'Gentium Basic', serif;
 	list-style: none;
 	color: rgb(160, 160, 160);
 	font-weight: 400;
@@ -1500,7 +1512,7 @@ input[type="submit"]{
 	border: none;
     box-shadow: none;
     background: transparent;
-    font-family: Gentium Basic Regular;
+    font-family:'Gentium Basic', serif;
     text-transform: uppercase;
     font-style: normal;
     letter-spacing: 0.26em;
@@ -1527,7 +1539,7 @@ input[type="submit"]:hover{
 .menu-social-menu-container .menu-item{
 	line-height: 10px;
     padding-bottom: 14px;
-    font-family: 'Gentium Basic';
+    font-family: 'Gentium Basic', serif;
 	list-style: none;
 	color: rgb(160, 160, 160);
 	font-weight: 400;
@@ -1569,39 +1581,26 @@ input[type="submit"]:hover{
     height: 100%;
     transform: translateX(50%);
     transition: 0.5s;
-    z-index: 99999;
-    opacity: 0;
+    z-index: 2;
+	opacity: 0;
+    text-align: center;
+	
 }
 
 .mobileMenusContainer.open {
     transform: translateX(0);
     opacity: 1;
-    transition-delay: 0.2s;
+	transition-delay: 0.2s;
+	width: 100%;
 }
-
-.mobileMenusContainer.open .mobileMensu .menusItem {
-    transform: translate(0);
+.mobileMenusContainer .menu-item{
+	opacity: 0;
+}
+.mobileMenusContainer.open  .menu-item {
+	transform: translate(0);
+	transition: .5s;
+	transition-delay: .8s;
     opacity: 1;
-}
-
-.mobileMenusContainer.open .mobileMensu .menusItem:nth-child(1) {
-    transition-delay: 0.2s;
-}
-
-.mobileMenusContainer.open .mobileMensu .menusItem:nth-child(2) {
-    transition-delay: 0.4s;
-}
-
-.mobileMenusContainer.open .mobileMensu .menusItem:nth-child(3) {
-    transition-delay: 0.6s;
-}
-
-.mobileMenusContainer.open .mobileMensu .menusItem:nth-child(4) {
-    transition-delay: 0.8s;
-}
-
-.mobileMenusContainer.open .mobileMensu .menusItem:nth-child(5) {
-    transition-delay: 1s;
 }
 
 .mobileMensu .menusItem {
@@ -1621,7 +1620,7 @@ input[type="submit"]:hover{
     height: 23px;
     top: 31px;
     cursor: pointer;
-    z-index: 999999;
+    z-index: 3;
     right: 26px;
 }
 
@@ -1654,10 +1653,10 @@ input[type="submit"]:hover{
 .hamSixth {
     top: 16px;
 }
-
+/* 
 .hamContainer.animate .hamLine {
     background-color: red;
-}
+} */
 
 .hamContainer.animate .hamLine.hamThird,
 .hamContainer.animate .hamLine.hamFourth {
@@ -1689,14 +1688,13 @@ input[type="submit"]:hover{
 .hamContainer.animate .hamLine.hamSixth {
     transform: rotate(45deg) translate(-3px, -2.3px);
 }
-
 .overlay {
     position: fixed;
     top: 0;
     width: 100%;
     background-color: black;
     height: 100%;
-    z-index: 9999;
+    z-index: 1;
     opacity: 0.6;
     pointer-events: none;
     cursor: pointer;
@@ -1715,62 +1713,206 @@ input[type="submit"]:hover{
 
 /* Reach Page Css Start Here */
 
-.threeHundredFive {
-    position: relative;
-    margin: 184px 7% 184px 33%;
-    z-index: 1001;
-}
-
-.unfixed {
-    position: unset;
-}
-
-.noMargin {
-    margin: 0;
-}
-
-.whiteMenus .menusItem {
-    color: #bdbaba;
-    font-weight: bold;
-}
-
-.hamLineRed .hamLine {
-    background-color: black;
-}
-
-.accordion-spacing {
-    text-transform: uppercase;
-}
-
 .stockists {
     padding-bottom: 56px;
-    font-family: 'Gentium Basic';
+    font-family: 'Assistant', sans-serif;
 	font-size: 12px;
-	color: rgb(160, 160, 160);
 	font-weight: 400;
+	letter-spacing: 3px;
+	line-height: 1em;
     text-transform: uppercase;
 }
 
 .off .accordionItemContent {
     height: 0px;
-    transition: height 1s ease-out;
-    transform: scaleY(0);
-    float: left;
-    display: block;
+    overflow: hidden;
 }
 
-.open .accordionItemContent {
-    display: block;
+.on .accordionItemContent,
+.on .accordionItemContent {
+    height: auto;
+    margin-bottom: 0;
 }
 
-.open .accordionItemHeading {
+.on .bottomhundreen {
+    padding-bottom: 100px;
+}
+
+.on .accordionItemHeading {
     color: #7f8c8d;
 }
 
-.reached * {}
+.accordionItem .accordionItemHeading {
+    cursor: pointer;
+}
 
+.bothTwentyFive {
+    padding: 0px 25px;
+}
 
+.subLocation {
+    margin-top: 0;
+    color: black;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.bottomthirty {
+    margin-bottom: 30px;
+}
+
+.accordionItemHeading {
+    font-size: 15px;
+    font-family: 'Gentium Basic', serif;
+	color: #444141;
+	font-family: 400;
+    letter-spacing: 2px;
+}
+
+.bottomSeventy {
+    padding-top: 70px;
+}
+
+.addresContainer .bottomthirty:last-child {
+    margin-bottom: 0;
+}
+
+.address {
+    font-family: 'Gentium Basic', serif;
+	letter-spacing: 2px;
+	font-family: 400;
+    font-size: 12px;
+    padding-bottom: 3px;
+    text-transform: uppercase;
+}
+
+.address:last-child {
+    padding-bottom: 0;
+}
+
+.oneSixtyEight {
+    padding-bottom: 168px;
+}
+
+.bottomFiftySix {
+    margin: 0;
+    padding-bottom: 56px;
+}
+
+.enquires {
+    font-size: 14px;
+    font-family: 'Gentium Basic', serif;
+	letter-spacing: 2px;
+	font-family: 400;
+    text-transform: uppercase;
+    color: black;
+    margin-top: 0;
+}
+
+.sixtyFive {
+    padding-bottom: 65px;
+}
+
+.press {
+    font-size: 12px;
+}
+
+.socialMedia {
+    padding-bottom: 2px;
+}
+
+.socialMedia:last-child {
+    padding-bottom: 0;
+}
+
+.fortySix {
+    margin: 0;
+    padding-bottom: 46px;
+}
+
+.flex {
+    display: flex
+}
+
+.widthFull {
+    width: 100%;
+    padding-right: 20px;
+}
+
+.textField {
+    padding: 0;
+    border: none;
+    border-bottom: 2px solid black;
+    font-style: italic;
+    font-family: 'Gentium Basic', serif;
+	font-size: 16px;
+	font-family: 400;
+    color: black;
+    width: 100%;
+    resize: none;
+    background-color: unset;
+    border-radius: 0px;
+    outline: none;
+}
+
+.select {
+    color: #8a8a8a;
+}
+
+.inputRow {
+    margin-bottom: 20px;
+}
+
+.inputRow div:last-child {
+    padding-right: 0;
+}
+
+[type="select"] {
+    background-image: url(../assets/icons/down-aero.svg);
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    -webkit-appearance: none;
+    outline: none;
+}
+
+.inputsContainer .inputRow:last-child {
+    margin-bottom: 0;
+}
+
+.submit {
+    border: none;
+    padding: 0;
+    font-family: 'Gentium Basic', serif;
+	letter-spacing: 4px;
+	font-family: 400;
+    text-transform: uppercase;
+    color: #928f8f;
+    font-size: 16px;
+    transition: 0.5s;
+    background-color: unset;
+}
+
+.submit:hover {
+    border: 1px solid black;
+    padding: 11px 21px;
+    background-color: black;
+    color: #fff;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
 /* Reach Page Css Start Here */
+
+
+
+
 
 
 /* For Responsiveness */
@@ -1785,7 +1927,8 @@ input[type="submit"]:hover{
         align-items: center;
         padding-bottom: 0;
     }
-    .menus {
+    
+    .menulogoContainer .menus {
         display: none;
     }
     .threeHundredFive {

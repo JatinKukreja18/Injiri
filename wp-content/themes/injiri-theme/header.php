@@ -27,29 +27,89 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'injiri-theme' ); ?></a>
 
 	<header>
-		<div class="menulogoContainer homeHeader">
-			<div class="logoContainer">
-                <div>
-                    
-                
+		
+		<div  
+		
 			<?php
-			the_custom_logo();
-			
-			
+			if ( is_home() || is_front_page() ) :
+				?>
+				class="menulogoContainer injiri-header injiri-header-home	"
+				<?php
+			endif;
 			?>
-			</div>
+				<?php
+
+			if ( !is_home() && !is_front_page() ) :
+				?>
+				class="menulogoContainer injiri-header"
+
+			<?php
+			endif;
+			?>
+			>
+			<div class="logoContainer">
+                <div class="row">	
+				<?php
+					if ( is_home() || is_front_page() ) :
+						?>
+						<a href="<?php echo(get_home_url());?>" class="custom-logo-link col-lg-2">
+							<img src="<?php echo(get_template_directory_uri());?>/images/logo.png" alt=""/>
+						</a>						
+						<?php
+					endif;
+					?>
+						<?php
+
+					if ( !is_home() && !is_front_page() ) :
+						?>
+						<a href="<?php echo(get_home_url());?>" class="custom-logo-link col-lg-2">
+									<img src="<?php echo(get_template_directory_uri());?>/images/blackLogo.png" alt=""/>
+						</a>
+
+					<?php
+					endif;
+					?>
+					<!-- <php
+					the_custom_logo();
+					> -->
+					
+				</div>
 
 		</div><!-- .site-branding -->
-		<?php
-		wp_nav_menu( array(
-			'theme_location' => 'menu-1',
-			'menu_id'        => 'primary-menu',
-			'menu_class' => 'menus'
-		) );
-		?>
-		<!-- #site-navigation -->
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'menu-1',
+				'menu_id'        => 'primary-menu',
+				'menu_class' => 'menus'
+			) );
+			?>
+			<!-- #site-navigation -->
 		</div>
-
+		<div id="mobile-menu" onClick="toggleMenu()"class="hamContainer hamLineRed">
+			<span class="hamLine hamFirst"></span>
+			<span class="hamLine hamSecond"></span>
+			<span class="hamLine hamThird"></span>
+			<span class="hamLine hamFourth"></span>
+			<span class="hamLine hamFifth"></span>
+			<span class="hamLine hamSixth"></span>
+		</div>
 	</header><!-- #masthead -->
-
+	<div class="mobileMenusContainer">
+	<?php
+			wp_nav_menu( array(
+				'theme_location' => 'menu-1',
+				'menu_id'        => 'primary-menu',
+				'menu_class' => 'menus'
+			) );
+			?>
+	</div>
+    <div class="overlay" onClick="toggleMenu()"></div>
+	<script>
+		function toggleMenu(){
+			document.querySelector('.hamContainer').classList.toggle("animate");
+			document.querySelector('.mobileMenusContainer').classList.toggle("open");
+			document.querySelector('.overlay').classList.toggle("showOverlay");
+		}
+		
+	</script>
 	<div id="content" class="site-content">
