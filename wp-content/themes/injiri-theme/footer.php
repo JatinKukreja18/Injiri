@@ -14,6 +14,36 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer footerContainer">
+    <div id="footer-sidebar" class="footer-sections">
+        <div id="footer-sidebar1">
+            <?php
+            if(is_active_sidebar('footer-sidebar-1')){
+            dynamic_sidebar('footer-sidebar-1');
+            }
+            ?>
+        </div>
+        <div id="footer-sidebar2">
+            <?php
+            if(is_active_sidebar('footer-sidebar-2')){
+            dynamic_sidebar('footer-sidebar-2');
+            }
+            ?>
+        </div>
+        <div id="footer-sidebar3">
+            <?php
+            if(is_active_sidebar('footer-sidebar-3')){
+            dynamic_sidebar('footer-sidebar-3');
+            }
+            ?>
+            <!-- <div class="footerContent">
+            <div class="emailInputContainer">
+                <span>
+                    <input name="email" class="inputEmail" type="text" placeholder="Enter Email">
+                </span>
+            </div> -->
+        </div>
+        </div>
+    </div>
 		<div class="site-info">
 			
 				<!-- <php
@@ -21,22 +51,7 @@
 				printf( 'Designed by Shambhavi Ojha | Developed by Jatin Kukreja ');
 				> -->
 		</div><!-- .site-info -->
-		<div class="footerContent">
-            <div class="emailInputContainer">
-                <span>
-                    <input name="email" class="inputEmail" type="text" placeholder="Enter Email">
-                </span>
-            </div>
-            <div>
-                <ul class="footerMenus blackHover">
-                    <li class="footerItem"><a class="menusLink" href="">Subscribe</a></li>
-                    <li class="footerItem"><a class="menusLink" href="">Facebook</a></li>
-                    <li class="footerItem"><a class="menusLink" href="">Instagram</a></li>
-                    <li class="footerItem"><a class="menusLink" href="">Privacy Policy</a></li>
-                    <li class="footerItem"> &copy; 2018 INJIRI </li>
-                </ul>
-            </div>
-        </div>
+		
 	</footer><!-- #colophon -->
 	
 </div><!-- #page -->
