@@ -147,7 +147,7 @@ add_action( 'widgets_init', 'injiri_theme_widgets_init' );
 
 /* NEW POST CREATION - TECHNIQUES */
 
-function cw_post_type_techniques() {
+	function cw_post_type_techniques() {
 
 	$supports = array(
 	'title', // post title
@@ -189,7 +189,53 @@ function cw_post_type_techniques() {
 	}
 	add_action('init', 'cw_post_type_techniques');
 	
-	/*Custom Post type end*/
+/*Custom Post type end*/
+
+/* NEW POST CREATION - TECHNIQUES */
+
+function cw_post_type_stockists() {
+
+	$supports = array(
+	'title', // post title
+	'editor', // post conten
+	'thumbnail', // featured images
+	// 'excerpt', // post excerpt
+	'page-attributes',
+	'custom-fields', // custom fields
+	'revisions', // post revisions
+	'post-formats', // post formats
+	);
+	
+	$labels = array(
+	'name' => _x('stockists', 'plural'),
+	'singular_name' => _x('stockist', 'singular'),
+	'menu_name' => _x('Stockists', 'admin menu'),
+	'name_admin_bar' => _x('Stockists', 'admin bar'),
+	'add_new' => _x('Add New', 'add new'),
+	'add_new_item' => __('Add New Stockist'),
+	'new_item' => __('New stockist'),
+	'edit_item' => __('Edit stockist'),
+	'view_item' => __('View stockist'),
+	'all_items' => __('All Stockists'),
+	'search_items' => __('Search Stockists'),
+	'not_found' => __('No techniques found.'),
+	);
+	
+	$args = array(
+	'supports' => $supports,
+	'labels' => $labels,
+	'public' => true,
+	'query_var' => true,
+	'rewrite' => array('slug' => 'stockists'),
+	'has_archive' => true,
+	'hierarchical' => true,
+	);
+	register_post_type('stockists', $args);
+	}
+	add_action('init', 'cw_post_type_stockists');
+	
+/*Custom Post type end*/
+
 /**
  * Enqueue scripts and styles.
  */

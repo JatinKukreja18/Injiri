@@ -50,12 +50,12 @@
 			?>
 			>
 			<div class="logoContainer">
-                <div class="">	
+                <div class="row">	
 				<?php
 					if ( is_home() || is_front_page() ) :
 						?>
-						<a href="<?php echo(get_home_url());?>" class="custom-logo-link col-lg-2">
-							<img src="<?php echo(get_template_directory_uri());?>/images/logo.png" alt=""/>
+						<a href="<?php echo(get_home_url());?>" class="custom-logo-link col-lg-2  col-sm-2">
+							<img src="<?php echo(get_template_directory_uri());?>/images/logo-white.png" alt=""/>
 						</a>						
 						<?php
 					endif;
@@ -64,8 +64,8 @@
 
 					if ( !is_home() && !is_front_page() ) :
 						?>
-						<a href="<?php echo(get_home_url());?>" class="custom-logo-link col-lg-2">
-									<img src="<?php echo(get_template_directory_uri());?>/images/blackLogo.png" alt=""/>
+						<a href="<?php echo(get_home_url());?>" class="custom-logo-link col-lg-2  col-sm-2">
+									<img src="<?php echo(get_template_directory_uri());?>/images/logo-black.png" alt=""/>
 						</a>
 
 					<?php

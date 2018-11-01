@@ -996,7 +996,7 @@ ul {
     list-style-type: none;
     /* margin-bottom: 0 !important;
     margin-top: 0; */
-    margin: 0 !important;
+    margin: 0 ;
 }
 
 a {
@@ -1371,14 +1371,14 @@ a:hover {
 .menu-item {
     padding-bottom: 25px;
     text-transform: uppercase;
-    font-size: 12.5px;
+    font-size: 12px;
     letter-spacing: 3px;
     font-family: 'Gentium Basic', serif;
     line-height: 1em;
 }
-.menu-item:hover{
+/* .menu-item:hover{
 	letter-spacing: 2px;
-}
+} */
 .injiri-header-home.injiri-header 
 .menu-item > a{
 	color: #fff;
@@ -1422,7 +1422,7 @@ a:hover {
 }
 .menulogoContainer > .menu-menu-1-container{
 	position: absolute;
-	top:calc(100% + 55px);
+	top:calc(100% + 56px);
 	left: 90px;
 	width: auto;
 	max-width: 174px;
@@ -1431,9 +1431,10 @@ a:hover {
 	display: inline-block;
     /* height: 8px; */
     font-size: 8px;
-	margin: 0px;
-	padding: 10px 0px;
-	max-width: 184px;
+    margin: 0px;
+    padding-top: 10px;
+    max-width: 184px;
+    padding-bottom: 10px;
 }
 .custom-logo-link > img{
 	width: auto;
@@ -1729,80 +1730,72 @@ input[type="submit"]:hover{
 
 /* Reach Page Css Start Here */
 
-.stockists {
-    padding-bottom: 56px;
-    font-family: 'Assistant', sans-serif;
+/* stockist country styling begins */
+.stockist-place{
 	font-size: 12px;
-	font-weight: 400;
-	letter-spacing: 3px;
 	line-height: 1em;
-    text-transform: uppercase;
+	/* margin-bottom: 28px; */
 }
-
-.off .accordionItemContent {
-    height: 0px;
-    overflow: hidden;
-}
-
-.on .accordionItemContent,
-.on .accordionItemContent {
-    height: auto;
-    margin-bottom: 0;
-}
-
-.on .bottomhundreen {
-    padding-bottom: 100px;
-}
-
-.on .accordionItemHeading {
-    color: #7f8c8d;
-}
-
-.accordionItem .accordionItemHeading {
-    cursor: pointer;
-}
-
-.bothTwentyFive {
-    padding: 0px 25px;
-}
-
-.subLocation {
-    margin-top: 0;
-    color: black;
-    font-weight: 400;
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.bottomthirty {
-    margin-bottom: 30px;
-}
-
-.accordionItemHeading {
-    font-size: 15px;
+.stockist-place >.stockist-title{
     font-family: 'Gentium Basic', serif;
-	color: #444141;
-	font-family: 400;
-    letter-spacing: 2px;
+	font-size: 12px;
+	letter-spacing : 0.26em;
+	cursor: pointer;
+	color : #000000;
+	text-transform: uppercase;
+	margin-bottom: 25px;
+    display: inline-block;
+}
+.stockist-place.open >.stockist-title{
+	margin-bottom: 50px;
+}
+.stockist-place .stockist-title:hover{
+	color : #A0A0A0
 }
 
-.bottomSeventy {
-    padding-top: 70px;
+.stockist-place 
+.stockist-subplace {
+	margin-left: 16px;
+	height: 0px;
+	transition: .5s;
+	overflow: hidden;
 }
 
-.addresContainer .bottomthirty:last-child {
-    margin-bottom: 0;
+.stockist-place 
+.stockist-subplace.open{
+	height: auto;
+}
+.stockist-place 
+.stockist-subplace.open li{
+	color: #a0a0a0;
+}
+.stockist-place.open .stockist-title{
+	color: #a0a0a0;
+}
+.stockist-place 
+.stockist-subplace  li {
+    font-family: 'Assistant', san-serif;
+	font-size: 10px;
+	font-weight: 500;
+	letter-spacing : 0.18em;
+	/* cursor: pointer; */
+	color : #a0a0a0;
+	text-transform: uppercase;
+	margin-bottom: 50px;
+    display: inline-block;
 }
 
-.address {
-    font-family: 'Gentium Basic', serif;
-	letter-spacing: 2px;
-	font-family: 400;
-    font-size: 12px;
-    padding-bottom: 3px;
-    text-transform: uppercase;
+.stockist-place 
+.stockist-subplace .stockist-title{
+	font-weight: 600;
+    margin-bottom: 25px;
+    display: inline-block;
 }
+
+.stockist-place .stockist-subplace .addresses{
+	white-space: pre-line;
+}
+/* stockist country styling ends */
 
 .address:last-child {
     padding-bottom: 0;
