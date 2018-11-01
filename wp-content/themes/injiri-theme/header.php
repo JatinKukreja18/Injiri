@@ -16,6 +16,8 @@
 	<title>INJIRI</title>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link href="https://fonts.googleapis.com/css?family=Gentium+Basic" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Assistant:300,400,700" rel="stylesheet">
@@ -48,7 +50,7 @@
 			?>
 			>
 			<div class="logoContainer">
-                <div class="row">	
+                <div class="">	
 				<?php
 					if ( is_home() || is_front_page() ) :
 						?>

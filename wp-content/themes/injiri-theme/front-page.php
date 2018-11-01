@@ -40,9 +40,35 @@ get_header();
 
 		endif;
 		?>
-
+		<a class="mute-icon" onClick="toggle()">
+			<img id="icon-unmute" src="<?php echo(get_template_directory_uri());?>/images/speaker.svg" >
+			<img id="icon-mute" hidden src="<?php echo(get_template_directory_uri());?>/images/speaker-mute.svg" >
+		</a>
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+	<script>;
+			var video=document.getElementById("home-video");
+		function toggle(){
+			video.muted = !video.muted;
+			if(video.muted){
+				document.querySelector("#icon-mute").hidden = true
+				document.querySelector("#icon-unmute").hidden = false
+			}
+			else{
+				document.querySelector("#icon-unmute").hidden = true
+				document.querySelector("#icon-mute").hidden = false
+			}
+		}
+		// window.onload = (function (oldOnLoad) {
+		// 	return function () {
+		// 	if (oldOnLoad) { 
+		// 		olOnLoad();  //fire old Onload event that was attached if any.
+		// 	}
+		// 	// setTimeout(() => {
+		// 	// 	video.muted = !video.muted;
+		// 	// }, 1000);
+		// 	}
+		// })(window.onload);
+	</script>
 <?php
 get_footer();
