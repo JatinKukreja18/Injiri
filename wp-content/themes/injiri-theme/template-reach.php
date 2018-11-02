@@ -1,17 +1,23 @@
 <?php
 /*Template Name: Reach*/
 get_header();
-query_posts(array('post_type' => 'stockists','post_parent' => 0,'orderby' => 'title','order' => 'ASC')); ?>
+// this below queries fetches all the countries
+?>
 <div class=" injiri-wrapper">
 	<div class="row">
-    <div class="col-lg-4 col-sm-4"></div>
+	<div class="col-lg-4 col-sm-4"></div>
+	
     <div class=" col-lg-4 col-sm-4">
 		<ul>
 
 <?php
+query_posts(array('post_type' => 'stockists','post_parent' => 0,'orderby' => 'title','order' => 'ASC')); 
 while (have_posts()) : the_post(); ?>
 	<li class="stockist-place" >
+		<!-- country title -->
 		<span class="stockist-title" onClick="toggleCity(this.parentNode);"><?php the_title(); ?></span>
+		
+		<!-- this below queries fetches all the sub countires/cities -->
 		<?php 
 		$args=array(
                 'orderby' => 'title',
@@ -41,7 +47,25 @@ while (have_posts()) : the_post(); ?>
         }
 		?>
 	</li>
+	
 		<?php endwhile?>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-4 col-sm-4"></div>
+	
+    <div class=" col-lg-4 col-sm-4">
+		<?php
+				wp_reset_query();
+
+				while ( have_posts() ) :
+					the_post();
+
+					get_template_part( 'template-parts/content', get_post_type() );
+
+
+				endwhile; // End of the loop.
+				?>
 	</div>
 </div>
 <script>
