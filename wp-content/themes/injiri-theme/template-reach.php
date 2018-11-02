@@ -8,10 +8,11 @@ get_header();
 	<div class="col-lg-4 col-sm-4"></div>
 	
     <div class=" col-lg-4 col-sm-4">
-		<ul>
+	<h6 class="injiri-section-heading">Stockists</h6>
+		<ul class="stockist-container">
 
 <?php
-query_posts(array('post_type' => 'stockists','post_parent' => 0,'orderby' => 'title','order' => 'ASC')); 
+query_posts(array('post_type' => 'stockists','posts_per_page' => -1 ,'post_parent' => 0,'orderby' => 'title','order' => 'ASC')); 
 while (have_posts()) : the_post(); ?>
 	<li class="stockist-place" >
 		<!-- country title -->
@@ -61,7 +62,7 @@ while (have_posts()) : the_post(); ?>
 				while ( have_posts() ) :
 					the_post();
 
-					get_template_part( 'template-parts/content', get_post_type() );
+					get_template_part( 'template-parts/content', 'nohead' );
 
 
 				endwhile; // End of the loop.

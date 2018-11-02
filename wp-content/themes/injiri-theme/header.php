@@ -114,4 +114,7 @@
 		}
 		
 	</script>
-	<div id="content" class="site-content">
+	<div id="content" class="site-content  
+    <?php if ( is_home() || is_front_page() ) :?>
+        content-margin-home 
+        <?php endif?>">

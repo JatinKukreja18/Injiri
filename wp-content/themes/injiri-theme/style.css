@@ -1012,7 +1012,22 @@ a:hover {
     color: inherit ;
 }
 
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,.injiri-section-heading{
+	font-family: 'Assistant', san-serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    line-height: 1em;
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 53px;
+    display: block;
+}
 /* Standard CSS ends*/
 
 /* Custom Grid Css */
@@ -1446,8 +1461,8 @@ a:hover {
     background-color: unset;
 }
 
-.site-content{
-	margin-bottom: 280px;
+.site-content.content-margin-home{
+	margin-bottom: 230px;
 }
 /* Home Page CSS */
 
@@ -1457,11 +1472,16 @@ a:hover {
 .footerContainer {
     display: flex;
     justify-content: flex-end;
-    padding: 60px 90px 46px 90px;
-    position: fixed;
+    padding: 120px 90px 60px 90px;
     bottom: 0;
 	width: 100%;
 	z-index: -1;
+}
+.footerContainer.collapse{
+	padding-top: 20px 
+}
+.footerContainer.fixed{
+    position: fixed;
 }
 /* styling for footer widget sections */
 .footer-sections{
@@ -1494,7 +1514,7 @@ a:hover {
 }
 .footer-sections >#footer-sidebar3 .widget_text > .widget-title{
 	line-height: 10px;
-    padding-bottom: 14px;
+    /* padding-bottom: 14px; */
     font-family: 'Gentium Basic', serif;
 	list-style: none;
 	color: rgb(160, 160, 160);
@@ -1502,7 +1522,8 @@ a:hover {
     letter-spacing: 3px;
     font-size: 10px;
     transition: .3s;
-    text-transform: uppercase;
+	text-transform: uppercase;
+	margin: 0px;
 }
 
 .footerContent {
@@ -1522,7 +1543,7 @@ input {
     background: none;
     width: 100%;
     font-size: 11px;
-    font-style: italic;
+    /* font-style: italic; */
     padding-bottom: 1px;
 }
 input[type="submit"]{
@@ -1533,13 +1554,15 @@ input[type="submit"]{
     text-transform: uppercase;
     font-style: normal;
     letter-spacing: 0.26em;
-    padding: 10px;
-	width: auto;
-	border-radius: 0px;
+	padding: 10px 0px;
+    width: auto;
+    border-radius: 0px;
 	transition: .3s;
+	cursor: pointer;
+    margin-top: 13px;
 }
 input[type="submit"]:hover{
-	box-shadow: 1px 1px 8px 0px #cccccc;
+	text-decoration: underline;
 }
 .inputEmail:focus {
     border-bottom: 1px solid black;
@@ -1553,7 +1576,7 @@ input[type="submit"]:hover{
     padding-bottom: 0;
 }
 
-.menu-social-menu-container .menu-item{
+.menu-footer-menu-container .menu-item{
 	line-height: 10px;
     padding-bottom: 14px;
     font-family: 'Gentium Basic', serif;
@@ -1564,14 +1587,15 @@ input[type="submit"]:hover{
 	font-size: 10px;
 	transition: .3s;
 	text-transform: uppercase;
+	
 }
 
-.menu-social-menu-container .menu-item > a{
+.menu-footer-menu-container .menu-item > a{
 	color: rgb(160, 160, 160);
 	transition: .5s;
 }
 
-.menu-social-menu-container .menu-item>a:hover{
+.menu-footer-menu-container .menu-item>a:hover{
 	color: #000;
 }
 
@@ -1731,6 +1755,9 @@ input[type="submit"]:hover{
 /* Reach Page Css Start Here */
 
 /* stockist country styling begins */
+.stockist-container{
+	margin-bottom: 83px;
+}
 .stockist-place{
 	font-size: 12px;
 	line-height: 1em;
@@ -1796,6 +1823,35 @@ input[type="submit"]:hover{
 	white-space: pre-line;
 }
 /* stockist country styling ends */
+/* social menu styling */
+
+.menu-social-menu-container{
+	margin-bottom: 109px;
+}
+.menu-social-menu-container .menu-item{
+	line-height: 10px;
+    padding-bottom: 0px;
+    font-family: 'Gentium Basic', serif;
+	list-style: none;
+	color: #000000;
+	font-weight: 400;
+    letter-spacing: 0.26em;
+	font-size: 12px;
+	transition: .3s;
+	text-transform: uppercase;
+	margin-bottom: 25px;
+	
+}
+
+.menu-social-menu-container .menu-item > a{
+	color: #000000;
+	transition: .5s;
+}
+
+.menu-social-menu-container .menu-item>a:hover{
+	color: #A0A0A0;
+}
+/* social menu styling */
 
 .address:last-child {
     padding-bottom: 0;
@@ -1849,8 +1905,105 @@ input[type="submit"]:hover{
     width: 100%;
     padding-right: 20px;
 }
+/* contact form styling */
+.wpcf7-form br{
+	display: none;
+}
+.wpcf7-form label{
+    font-family: 'Gentium Basic', serif;
+	font-size: 10px;
+	letter-spacing : 0.18em ;
+	color: #000000;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 27px; 
+}
+.wpcf7-form label span{
+	flex:1;
+}
+.wpcf7-form label span.contact-name{
+margin-right: 6px;
+}
+.wpcf7-form label span.contact-number{
+	margin-left: 6px;
+}
 
-.textField {
+.wpcf7-form input[type="text"], 
+
+.wpcf7-form input[type="email"], 
+
+.wpcf7-form input[type="tel"]{
+	padding: 0;
+    border: none;
+    border-bottom: 1px solid #a0a0a0;
+	font-family: 'Gentium Basic', serif;
+	font-size: 10px;
+	font-weight: 400;
+    color: black;
+    width: 100%;
+    resize: none;
+    background-color: unset;
+    border-radius: 0px;
+	transition: .3s;
+	letter-spacing : 0.18em ;
+	outline: none;	
+	text-transform: uppercase;
+}
+.wpcf7-form textarea{
+	padding: 0;
+    border: none;
+    border-bottom: 1px solid #a0a0a0;
+	font-family: 'Gentium Basic', serif;
+	font-size: 10px;
+	font-weight: 400;
+    color: black;
+    width: 100%;
+    resize: none;
+    background-color: unset;
+    border-radius: 0px;
+	outline: none;	
+	height: 15px;
+	transition: .3s;
+	text-transform: uppercase;
+}
+.wpcf7-form textarea:focus{
+	height: 100px;
+}
+.wpcf7-form input::placeholder,
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder ,
+:-moz-placeholder{
+	font-family: 'Gentium Basic', serif;
+	font-size: 10px;
+	font-weight: 400;
+	color: #a0a0a0;
+	letter-spacing: 0.20em;
+	font-style: italic;
+	text-transform: unset;
+
+}
+
+.wpcf7-form input[type="tel"]:focus,
+.wpcf7-form input[type="text"]:focus,
+.wpcf7-form input[type="email"]:focus{
+    border-bottom: 1px solid #000;
+}
+span.wpcf7-not-valid-tip{
+	color: #a0a0a0;
+}
+div.wpcf7-response-output{
+	border: none !important;
+	padding: 0;
+	font-family: 'Gentium Basic', serif;
+	font-size: 12px;
+	font-weight: 400;
+    color: black;
+    width: 100%;
+}
+/* contact form styling */
+
+/* .textField {
     padding: 0;
     border: none;
     border-bottom: 2px solid black;
@@ -1864,10 +2017,30 @@ input[type="submit"]:hover{
     background-color: unset;
     border-radius: 0px;
     outline: none;
-}
+} */
 
-.select {
-    color: #8a8a8a;
+select {
+	color: #8a8a8a;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	padding: 0;
+    border: none;
+    border-bottom: 1px solid #a0a0a0;
+	font-family: 'Gentium Basic', serif;
+	font-size: 10px;
+	font-weight: 400;
+	letter-spacing: 0.18em;
+    color: black;
+    width: 100%;
+    resize: none;
+    background-color: unset;
+    border-radius: 0px;
+	outline: none;
+	text-transform: uppercase;
+	transition: .3s;
 }
 
 .inputRow {

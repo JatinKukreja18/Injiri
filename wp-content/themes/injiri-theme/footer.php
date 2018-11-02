@@ -13,7 +13,13 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer footerContainer">
+    <footer id="colophon" class="site-footer 
+    <?php if ( is_home() || is_front_page() ) :?>
+        fixed 
+        <?php endif?>
+        <?php if ( !is_home() && !is_front_page() ) :?>
+        collapse 
+        <?php endif?>footerContainer">
     <div id="footer-sidebar" class="footer-sections">
         <div id="footer-sidebar1">
             <?php
