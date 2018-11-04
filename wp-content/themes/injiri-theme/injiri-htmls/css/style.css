@@ -2,6 +2,27 @@ body {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
+    height: 100%;
+}
+
+@font-face {
+    font-family: "Assistant-Regular";
+    src: url(../assets/fonts/Assistant-Regular.ttf)
+}
+
+@font-face {
+    font-family: "GenBasI";
+    src: url(../assets/fonts/GenBasI.ttf);
+}
+
+@font-face {
+    font-family: "GenBasR";
+    src: url(../assets/fonts/GenBasR.ttf);
+}
+
+@font-face {
+    font-family: "GenBasR";
+    src: url(../assets/fonts/MyriadPro-Regular.otf);
 }
 
 
@@ -28,6 +49,7 @@ ul {
 }
 
 a {
+    color: inherit !important;
     text-decoration: none;
     background-color: inherit !important;
 }
@@ -82,7 +104,7 @@ a:hover {
 }
 
 .logoContainer {
-    padding-bottom: 115px;
+    /* padding-bottom: 115px; */
 }
 
 .logo {
@@ -392,9 +414,6 @@ a:hover {
 
 .reached * {}
 
-
-/* Reach Page Css Start Here */
-
 .threeTwenty {
     position: relative;
     margin: 184px 7% 184px 33%;
@@ -541,6 +560,9 @@ a:hover {
 
 .widthFull {
     width: 100%;
+}
+
+.rightTwentyPix {
     padding-right: 20px;
 }
 
@@ -611,10 +633,125 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
-/* Reach Page Css Start Here */
+/* Reach Page Css end Here */
 
 
-/* Reach Page Css Start Here */
+/* For Collection Page */
+
+.sideBar {
+    position: absolute;
+    top: 172px;
+}
+
+.itemCenter {
+    align-items: center;
+}
+
+.fiftyPercent {
+    width: 50%;
+}
+
+.fiftyPercentMargin {
+    margin: 150px 120px 150px auto;
+}
+
+.collectionLinks {
+    width: 25%;
+    margin: 0 auto;
+    min-width: 176px;
+    text-transform: uppercase;
+}
+
+.bottomTweHun .itemCenter {
+    padding-bottom: 200px;
+}
+
+.bottomTweHun .itemCenter:last-child {
+    padding-bottom: 0px;
+}
+
+.linkItem li {
+    font-family: Gentium Basic Regular;
+    Letter-spacing: 0.26em;
+    color: #000000;
+    padding-bottom: 14px;
+    font-size: 12px;
+}
+
+.linkItem li:hover {
+    color: #A0A0A0;
+}
+
+.linkItem li:last-child {
+    padding-bottom: 0;
+}
+
+.collectionLinks h6 {
+    padding-bottom: 40px;
+    letter-spacing: 0.18em;
+    color: #000000;
+    font-weight: 400;
+    font-family: Assistant-Regular;
+    font-size: 10px
+}
+
+
+/* Gallery Section */
+
+.previewImg {
+    text-align: center;
+    padding-bottom: 38px;
+}
+
+.previewImg img {
+    height: 500px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(62px, 1fr));
+    grid-gap: 8px 8px;
+}
+
+.galleryImg img {
+    width: 67px;
+    height: 82px;
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+.selected img {
+    opacity: 1;
+}
+
+.sixtyEightMargin {
+    width: 68%;
+    margin: 150px 84px 150px auto;
+}
+
+.leftTwelPecent {
+    padding-left: 12%;
+}
+
+.gallerContent {
+    font-family: Assistant-Regular;
+}
+
+.gallerContent p:nth-child(2) {
+    padding: 50px 0px;
+}
+
+.collectionName {
+    padding: 0px 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+
+/* Gallery end here */
+
+
+/* Collection Page end here */
 
 
 /* For Responsiveness */
@@ -634,6 +771,72 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .threeHundredFive {
         position: unset;
+    }
+}
+
+@media (max-width:694px) {
+    .fiftyPercentMargin {
+        margin: 150px 50px 150px auto;
+        width: 58%;
+    }
+}
+
+@media (max-width:510px) {
+    .fiftyPercentMargin {
+        margin: 150px 50px 150px auto;
+        width: 100%;
+        padding: 0px 30px;
+    }
+    .collectionLinks {
+        margin: 0px 0px 0px auto;
+        padding: 0px 8px;
+    }
+}
+
+@media (max-width:400px) {
+    .collectionFlex {
+        flex-direction: column;
+        text-align: center;
+    }
+    .collectionLinks {
+        margin: 0;
+        padding: 30px 0px;
+    }
+    .bottomTweHun .itemCenter {
+        padding-bottom: 60px;
+    }
+}
+
+@media (max-width:879px) {
+    .gallerContent {
+        padding-left: 22px;
+    }
+    .sixtyEightMargin {
+        margin: 150px 14px 150px auto;
+    }
+}
+
+@media (max-width:787px) {
+    .sixtyEightMargin {
+        width: 72%;
+    }
+}
+
+@media (max-width:769px) {
+    .sixtyEightMargin {
+        flex-direction: column;
+    }
+}
+
+@media (max-width:500px) {
+    .sixtyEightMargin {
+        width: 100%;
+    }
+    .gallerContent {
+        padding: 0;
+    }
+    .sixtyEightMargin {
+        padding: 0px 20px;
     }
 }
 
