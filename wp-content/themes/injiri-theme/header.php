@@ -54,7 +54,7 @@
 				<?php
 					if ( is_home() || is_front_page() ) :
 						?>
-						<a href="<?php echo(get_home_url());?>" class="custom-logo-link col-lg-2  col-sm-2">
+						<a href="<?php echo(get_home_url());?>" class="custom-logo-link col-lg-2  ">
 							<img src="<?php echo(get_template_directory_uri());?>/images/logo-white.png" alt=""/>
 						</a>						
 						<?php
@@ -64,7 +64,7 @@
 
 					if ( !is_home() && !is_front_page() ) :
 						?>
-						<a href="<?php echo(get_home_url());?>" class="custom-logo-link col-lg-2  col-sm-2">
+						<a href="<?php echo(get_home_url());?>" class="custom-logo-link col-lg-2  ">
 									<img src="<?php echo(get_template_directory_uri());?>/images/logo-black.png" alt=""/>
 						</a>
 
@@ -87,16 +87,17 @@
 			?>
 			<!-- #site-navigation -->
 		</div>
-		<div id="mobile-menu" onClick="toggleMenu()"class="hamContainer hamLineRed">
+		<div id="mobile-menu" onClick="toggleMenu()"class="hamContainer
+		<?php if ( is_home() || is_front_page() ) :?>white<?php endif;?> ">
 			<span class="hamLine hamFirst"></span>
 			<span class="hamLine hamSecond"></span>
 			<span class="hamLine hamThird"></span>
-			<span class="hamLine hamFourth"></span>
-			<span class="hamLine hamFifth"></span>
-			<span class="hamLine hamSixth"></span>
 		</div>
 	</header><!-- #masthead -->
-	<div class="mobileMenusContainer">
+	<div class="mobileMenusContainer <?php
+			if ( is_home() || is_front_page() ) :?>dark<?php endif;?>
+			<?php if ( !is_home() && !is_front_page() ) :?>light<?php endif; ?>
+			">
 	<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',
@@ -105,7 +106,10 @@
 			) );
 			?>
 	</div>
-    <div class="overlay" onClick="toggleMenu()"></div>
+    <div class="overlay <?php
+			if ( is_home() || is_front_page() ) :?>dark<?php endif;?>
+			<?php if ( !is_home() && !is_front_page() ) :?>light<?php endif; ?>
+			" onClick="toggleMenu()"></div>
 	<script>
 		function toggleMenu(){
 			document.querySelector('.hamContainer').classList.toggle("animate");
