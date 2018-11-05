@@ -191,7 +191,7 @@ add_action( 'widgets_init', 'injiri_theme_widgets_init' );
 	
 /*Custom Post type end*/
 
-/* NEW POST CREATION - TECHNIQUES */
+/* NEW POST CREATION - Stockists */
 
 function cw_post_type_stockists() {
 
@@ -218,7 +218,7 @@ function cw_post_type_stockists() {
 	'view_item' => __('View stockist'),
 	'all_items' => __('All Stockists'),
 	'search_items' => __('Search Stockists'),
-	'not_found' => __('No techniques found.'),
+	'not_found' => __('No stockists found.'),
 	);
 	
 	$args = array(
@@ -234,6 +234,85 @@ function cw_post_type_stockists() {
 	}
 	add_action('init', 'cw_post_type_stockists');
 	
+/*Custom Post type end*/
+
+
+/* NEW POST CREATION - Collections */
+
+function cw_post_type_collections() {
+
+	$supports = array(
+	'title', // post title
+	'editor', // post content
+	'author', // post author
+	'thumbnail', // featured images
+	'excerpt', // post excerpt
+	// 'custom-fields', // custom fields
+	'comments', // post comments
+	'revisions', // post revisions
+	'post-formats', // post formats
+	);
+	
+	$labels = array(
+	'name' => _x('collections', 'plural'),
+	'singular_name' => _x('collection', 'singular'),
+	'menu_name' => _x('Collections', 'admin menu'),
+	'name_admin_bar' => _x('Collections', 'admin bar'),
+	'add_new' => _x('Add New', 'add new'),
+	'add_new_item' => __('Add New Collection'),
+	'new_item' => __('New Collection'),
+	'edit_item' => __('Edit Collection'),
+	'view_item' => __('View Collection'),
+	'all_items' => __('All Collections'),
+	'search_items' => __('Search Collections'),
+	'not_found' => __('No Collections found.'),
+	);
+	
+	$args = array(
+	'supports' => $supports,
+	'labels' => $labels,
+	'public' => true,
+	'query_var' => true,
+	'rewrite' => array('slug' => 'collections'),
+	'has_archive' => true,
+	'hierarchical' => true,
+	// 'taxonomies'          => array( 'category' ),
+	);
+	// register_taxonomy_for_object_type( 'category', 'custom_collection' );
+	register_post_type('collections', $args);
+	
+	}
+	add_action('init', 'cw_post_type_collections');
+function create_collection_taxonomies() {
+		// Add new taxonomy, make it hierarchical (like categories)
+	$labels = array(
+		'name'              => _x( 'type', 'taxonomy general name', 'textdomain' ),
+		'singular_name'     => _x( 'type', 'taxonomy singular name', 'textdomain' ),
+		'search_items'      => __( 'Search Types', 'textdomain' ),
+		'all_items'         => __( 'All Types', 'textdomain' ),
+		'parent_item'       => __( 'Parent Type', 'textdomain' ),
+		'parent_item_colon' => __( 'Parent Type:', 'textdomain' ),
+		'edit_item'         => __( 'Edit Type', 'textdomain' ),
+		'update_item'       => __( 'Update Type', 'textdomain' ),
+		'add_new_item'      => __( 'Add New Type', 'textdomain' ),
+		'new_item_name'     => __( 'New Type Name', 'textdomain' ),
+		'menu_name'         => __( 'Collection Set', 'textdomain' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'type' ),
+	);
+
+	register_taxonomy( 'type', array( 'collections' ), $args );
+}
+add_action( 'init', 'create_collection_taxonomies', 0 );
+
+
 /*Custom Post type end*/
 
 /**
