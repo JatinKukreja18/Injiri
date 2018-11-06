@@ -754,6 +754,68 @@ input[type=number]::-webkit-outer-spin-button {
 /* Collection Page end here */
 
 
+/* For story page */
+
+.storyContainer {
+    max-width: 40%;
+    margin: 172px 0 0 40%;
+}
+
+.content h1 {
+    font-family: Assistant-Regular;
+    font-size: 12px;
+    padding-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.storyImgContainer {
+    padding: 60px 0px;
+}
+
+.storyImgContainer img {
+    width: 100%;
+    height: max-content;
+    object-fit: cover;
+}
+
+.content p {
+    padding-bottom: 30px;
+    font-family: 'Conv_GenBasR';
+}
+
+.blockquote {
+    padding: 18px 11px;
+    margin: 0;
+    border: none;
+    font-size: 13px;
+    font-family: 'Conv_GenBasR';
+    text-align: center;
+    text-transform: uppercase;
+    font-style: italic;
+    position: relative;
+    line-height: 2;
+}
+
+.blockIcon {
+    position: absolute;
+}
+
+.blockquoteLeft {
+    left: -34px;
+}
+
+.blockquoteRight {
+    right: -34px;
+}
+
+.bottomHundredFifty {
+    padding-bottom: 150px;
+}
+
+
+/* Story end here */
+
+
 /* For Responsiveness */
 
 @media (max-width:500px) {
@@ -828,18 +890,6 @@ input[type=number]::-webkit-outer-spin-button {
     }
 }
 
-@media (max-width:500px) {
-    .sixtyEightMargin {
-        width: 100%;
-    }
-    .gallerContent {
-        padding: 0;
-    }
-    .sixtyEightMargin {
-        padding: 0px 20px;
-    }
-}
-
 @media (min-width:500px) {
     .hamContainer,
     .overlay {
@@ -850,6 +900,41 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .mobileMenusContainer {
         display: none;
+    }
+}
+
+@media (max-width:625px) {
+    .storyContainer {
+        max-width: 50%;
+    }
+}
+
+@media (max-width:500px) {
+    .sixtyEightMargin {
+        width: 100%;
+    }
+    .gallerContent {
+        padding: 0;
+    }
+    .sixtyEightMargin {
+        padding: 0px 20px;
+    }
+    .storyContainer {
+        max-width: 100%;
+        margin-left: 0;
+        padding: 0px 40px;
+    }
+    .blockquoteLeft {
+        left: 0px;
+    }
+    .blockquoteRight {
+        right: 0px;
+    }
+    .bottomHundredFifty {
+        padding-bottom: 60px;
+    }
+    .storyImgContainer img {
+        height: auto;
     }
 }
 
