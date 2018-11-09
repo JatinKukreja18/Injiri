@@ -1028,6 +1028,28 @@ h6,.injiri-section-heading{
     margin-bottom: 53px;
     display: block;
 }
+.injiri-list .injiri-list-item {
+	font-size: 0px;
+}
+.injiri-list .injiri-list-item .injiri-list-link{
+		font-family: 'Gentium Basic', serif;
+		font-size: 12px;
+		letter-spacing : 0.26em;
+		cursor: pointer;
+		color : #000000;
+		text-transform: uppercase;
+		margin-bottom: 25px;
+		display: inline-block;
+		line-height: 1em;
+}
+
+.injiri-list .injiri-list-item .injiri-list-link:hover,
+.injiri-list .injiri-list-item.active .injiri-list-link{
+	color: #a0a0a0;
+}
+.injiri-list .injiri-list-item.active .injiri-list-link{
+	cursor: default;
+}
 /* Standard CSS ends*/
 
 /* Home Page CSS */
@@ -1170,8 +1192,8 @@ h6,.injiri-section-heading{
 	width: 100%;
 	z-index: -1;
 }
-.footerContainer.collapse{
-	padding-top: 20px 
+.footerContainer.unfixed{
+	padding-top: 50px 
 }
 .footerContainer.fixed{
     position: fixed;
@@ -1458,11 +1480,13 @@ input[type="submit"]:hover{
 	height: 0px;
 	transition: .5s;
 	overflow: hidden;
+	opacity: 0;
 }
 
 .stockist-place 
 .stockist-subplace.open{
 	height: auto;
+	opacity: 1;
 }
 .stockist-place 
 .stockist-subplace.open li{
@@ -1773,12 +1797,41 @@ input[type=number]::-webkit-outer-spin-button {
 /* 
 	Collections page custom
 */
+.collection-set{
+	align-items: center;
+}
+.collection-spacer{
+	margin-bottom: 215px;
+}
 
+.collection-spacer:last-child{
+	margin-bottom: 0px;
+}
+.collection-set-list{
+	margin-left: 12.5%;
+}
 .collection-thumbnail{
 	display: none;
+	opacity: 0;
+	transition: .5s;
+	transition-delay: .5s;
+}
+.collection-thumbnail.preview:not(.active){
+	display: block;
+    position: absolute;
+    top: 0px;
+	opacity: 1;
+	left: 6px;
+	height: 100%;
+	background: #fff;
+    width: calc(100% - 12px);
+}
+.collection-thumbnail img {
+	width: 100%;
 }
 .collection-thumbnail.active{
 	display: block;
+	opacity: 1;
 }
 
 

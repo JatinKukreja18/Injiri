@@ -18,7 +18,7 @@
         fixed 
         <?php endif?>
         <?php if ( !is_home() && !is_front_page() ) :?>
-        collapse 
+        unfixed 
         <?php endif?>footerContainer">
     <div id="footer-sidebar" class="footer-sections">
         <div id="footer-sidebar1">
