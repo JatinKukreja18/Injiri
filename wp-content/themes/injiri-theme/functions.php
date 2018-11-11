@@ -274,7 +274,7 @@ function cw_post_type_collections() {
 	'public' => true,
 	'query_var' => true,
 	'rewrite' => array('slug' => 'collections'),
-	'has_archive' => true,
+	'has_archive' => false,
 	'hierarchical' => true,
 	// 'taxonomies'          => array( 'category' ),
 	);
