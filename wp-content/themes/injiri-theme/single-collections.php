@@ -31,7 +31,9 @@ get_header();
 					$first_image_full = wp_get_attachment_image_src( $pieces[0], 'full'); 
 					?>
 				<img id="SelectedThumbnail" src="<?php echo $first_image_full[0] ?>"/>
-				<div class="collection-gallery-wrapper">
+				<span class="collection-gallery-arrows left" onClick="scrollImages(0)"></span>
+				<span class="collection-gallery-arrows right" onClick="scrollImages(1)"></span>
+				<div class="collection-gallery-wrapper" >
 					<?php foreach ($pieces as $key => $value ) { 
 
 						$image_medium   = wp_get_attachment_image_src( $value, 'medium'); 
@@ -55,7 +57,11 @@ get_header();
 
 				</div>
 				<div class= "col-lg-2 col-sm-2 offset-1">
-					 <h3><?php previous_post_link(); ?> <?php the_title(); ?><?php next_post_link(); ?></h3>
+					 <h3>
+						 <?php previous_post_link(); ?> 
+					 	<?php the_title(); ?>
+						 <?php next_post_link(); ?>
+					</h3>
 					 <p class="injiri-description">  <?php echo wp_strip_all_tags(strip_shortcodes(get_the_content())); ?> </p>
 					
 				</div>
@@ -75,11 +81,41 @@ get_header();
 		}
 		
 		function removeActiveLinks(type){
-		let allLinks = document.querySelectorAll(".collection-gallery-item");
-		for(let i=0; i < allLinks.length ; i++){
-			allLinks[i].classList.remove('active')
+			let allLinks = document.querySelectorAll(".collection-gallery-item");
+			for(let i=0; i < allLinks.length ; i++){
+				allLinks[i].classList.remove('active')
+			}
 		}
-	}
+		function scrollImages(value){
+			let offset = document.querySelector('.collection-gallery-wrapper').scrollLeft
+			if(value){
+				document.querySelector('.collection-gallery-wrapper').scrollTo(offset + 50,0)
+			}else{
+				document.querySelector('.collection-gallery-wrapper').scrollTo(offset -50,0)
+			}
+		}
+		var checkForArrows = function () {
+			console.log("checking")
+			if(document && document.querySelector('.collection-gallery-wrapper')){
+				if(document.querySelector('.collection-gallery-wrapper').clientWidth < document.querySelector('.collection-gallery-wrapper').scrollWidth){
+					document.querySelectorAll('.collection-gallery-arrows')[0].classList.add('active');
+					document.querySelectorAll('.collection-gallery-arrows')[1].classList.add('active');
+				}	
+				else{
+					document.querySelector('.collection-gallery-arrows').classList.remove('active');
+				}
+			}
+		};
+
+		
+		// document.querySelector(".collection-gallery-wrapper").addEventListener("load",checkForArrows)
+		if ( !!(window.addEventListener) )
+		window.addEventListener("DOMContentLoaded", checkForArrows)
+		else // MSIE
+		window.attachEvent("onload", checkForArrows)
+		window.onresize = function(event) {
+			checkForArrows();
+		};
 	</script>
 <?php
 get_footer();

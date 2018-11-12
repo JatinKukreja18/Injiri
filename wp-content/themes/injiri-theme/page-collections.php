@@ -26,7 +26,7 @@ get_header();
 			$count = 0;
 			$count2 = 0;
 		// echo '<h3>'. $term->name .'</h3>';?>
-		<div class="col-lg-8 col-sm-4 offset-4 collection-spacer">
+		<div class="col-lg-8 col-sm-8 offset-4 collection-spacer">
 			<div class="row collection-set">
 				<div class="col-lg-6 col-sm-6 collection-set-image">		
 					<ul>
