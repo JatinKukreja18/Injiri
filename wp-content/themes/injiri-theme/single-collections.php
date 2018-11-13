@@ -30,7 +30,10 @@ get_header();
 					$pieces         = explode(",", $galleryIDS);
 					$first_image_full = wp_get_attachment_image_src( $pieces[0], 'full'); 
 					?>
-				<img id="SelectedThumbnail" src="<?php echo $first_image_full[0] ?>"/>
+				<div class="placeholder-image-block">
+					<img class="placeholder-image" src="<?php echo(get_template_directory_uri());?>/images/placeholder.jpg"/>				
+					<img id="SelectedThumbnail" src="<?php echo $first_image_full[0] ?>"/>
+				</div>
 				<span class="collection-gallery-arrows left" onClick="scrollImages(0)"></span>
 				<span class="collection-gallery-arrows right" onClick="scrollImages(1)"></span>
 				<div class="collection-gallery-wrapper" >
@@ -41,7 +44,7 @@ get_header();
 						$image_full     = wp_get_attachment_image_src( $value, 'full'); 
 					?>
 
-						<a class="collection-gallery-item <?php if($key ==0) echo 'active' ?>" onClick="changeImage('<?php echo $image_full[0] ?>',this)" rel="lightbox">
+						<a class="collection-gallery-item <?php if($key ==0) echo 'active' ?>" onClick="changeImage('<?php echo $image_medium[0] ?>','<?php echo $image_full[0] ?>',this)" rel="lightbox">
 							<img class="collection-gallery-item-image" src="<?php echo $image_thumbnail[0] ?>"/>
 						</a>
 					<?php } ?>
@@ -74,9 +77,12 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	<script>
-		function changeImage(value,selected){
+		function changeImage(smallImage,largeImage,selected){
 			removeActiveLinks();	
-			document.querySelector("#SelectedThumbnail").src = value;
+			document.querySelector("#SelectedThumbnail").src = smallImage;
+			setTimeout(() => {
+				document.querySelector("#SelectedThumbnail").src = largeImage;			
+			}, 0);
 			selected.classList.add('active');
 		}
 		
