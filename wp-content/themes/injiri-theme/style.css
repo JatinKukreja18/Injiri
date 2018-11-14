@@ -1876,31 +1876,16 @@ input[type=number]::-webkit-outer-spin-button {
 	overflow-x: auto;
 }
 .collection-gallery-wrapper.clothing{
-	flex-wrap: wrap;
 	margin-top: 84px;
 }
 .collection-gallery-wrapper::-webkit-scrollbar {
-    height:  0px;
+	height:  0px;
 }
 
 .collection-gallery-item-image{
 	max-width: 50px;
 }
-.collection-gallery-wrapper.clothing  .collection-gallery-item-image{
-	max-width: 100%;
-}
-.collection-gallery-wrapper.clothing .collection-gallery-item{
-	margin-bottom: 8px;
-    margin-right: 8px;
-    max-width: calc(20% - 8px);
-    min-width: 46px;
 
-}
-.collection-gallery-wrapper.clothing .collection-gallery-item:last-child{
-	margin-bottom: 8px;
-	margin-right: 0px;
-
-}
 .collection-gallery-item{
 	display: inline-block;
 	position: relative;
@@ -2161,7 +2146,7 @@ input[type=number]::-webkit-outer-spin-button {
   flex: 0 0 100%;
   max-width: 100%;
 }
-@media (min-width: 576px) {
+@media (min-width: 768px) {
 	.col-sm {
 	  -ms-flex-preferred-size: 0;
 	  flex-basis: 0;
@@ -2311,7 +2296,7 @@ input[type=number]::-webkit-outer-spin-button {
 	  max-width: 100%;
 	}
 }
-@media (min-width: 576px){
+@media (min-width: 768px){
 .offset-1 {
 	margin-left: 8.333333%;
   }
@@ -2372,18 +2357,46 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .mobileMenusContainer {
         display: none;
-    }
+	}
+	/* clothing single page */
+	.collection-gallery-wrapper.clothing{
+		flex-wrap: wrap;
+		margin-top: 84px;
+	}
+	.collection-gallery-wrapper.clothing  .collection-gallery-item-image{
+		max-width: 100%;
+	}
+	.collection-gallery-wrapper.clothing .collection-gallery-item{
+		margin-bottom: 8px;
+		margin-right: 8px;
+		max-width: calc(20% - 8px);
+		min-width: 46px;
+		
+	}
+	.collection-gallery-wrapper.clothing .collection-gallery-item:last-child{
+		margin-bottom: 8px;
+		margin-right: 0px;
+	}
 }
 @media only screen and (max-width:767px){
 	.injiri-wrapper{
 		padding: 188px 30px 60px 30px;
 	}
+	.hamContainer{
+		top: 28px;
+	}
 	.menulogoContainer {
-		padding: 50px 30px;
-
+		padding: 22px 30px;
 		align-items: center;
 		display: flex;
 		justify-content: flex-end;
+	}
+	.menulogoContainer.injiri-header{
+		background: #ffffff;
+	}
+
+	.menulogoContainer.injiri-header.injiri-header-home{
+		background: transparent;
 	}
 	.menulogoContainer > .menu-menu-1-container{
 		left: 30px;
