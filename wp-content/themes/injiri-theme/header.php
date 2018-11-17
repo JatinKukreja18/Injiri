@@ -20,7 +20,7 @@
 
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link href="https://fonts.googleapis.com/css?family=Gentium+Basic" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Assistant:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Assistant:300,400,600,700" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
 
@@ -35,7 +35,7 @@
 			<?php
 			if ( is_home() || is_front_page() ) :
 				?>
-				class="menulogoContainer injiri-header injiri-header-home	"
+				class="menulogoContainer injiri-header injiri-header-home col-sm-2 col-lg-2	"
 				<?php
 			endif;
 			?>
@@ -43,18 +43,18 @@
 
 			if ( !is_home() && !is_front_page() ) :
 				?>
-				class="menulogoContainer injiri-header"
+				class="menulogoContainer injiri-header col-sm-2 col-lg-2"
 
 			<?php
 			endif;
 			?>
 			>
 			<div class="logoContainer">
-                <div class="row">	
+             
 				<?php
 					if ( is_home() || is_front_page() ) :
 						?>
-						<a href="<?php echo(get_home_url());?>" class="custom-logo-link col-lg-2  ">
+						<a href="<?php echo(get_home_url());?>" class="custom-logo-link   ">
 							<img src="<?php echo(get_template_directory_uri());?>/images/logo-white.png" alt=""/>
 						</a>						
 						<?php
@@ -64,7 +64,7 @@
 
 					if ( !is_home() && !is_front_page() ) :
 						?>
-						<a href="<?php echo(get_home_url());?>" class="custom-logo-link col-lg-2  ">
+						<a href="<?php echo(get_home_url());?>" class="custom-logo-link ">
 									<img src="<?php echo(get_template_directory_uri());?>/images/logo-black.png" alt=""/>
 						</a>
 
@@ -75,7 +75,6 @@
 					the_custom_logo();
 					> -->
 					
-				</div>
 
 		</div><!-- .site-branding -->
 			<?php
@@ -116,7 +115,10 @@
 			document.querySelector('.mobileMenusContainer').classList.toggle("open");
 			document.querySelector('.overlay').classList.toggle("showOverlay");
 		}
-		
+		if(window.location.pathname.toString().indexOf("collections") != -1){
+			document.querySelector("#menu-item-187").classList.add("current-menu-item")
+		}
+
 	</script>
 	<div id="content" class="site-content  
     <?php if ( is_home() || is_front_page() ) :?>

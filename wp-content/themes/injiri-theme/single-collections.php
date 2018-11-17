@@ -12,7 +12,7 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main injiri-wrapper">
-			<div class="row">
+			<div class="row" style="align-items:flex-start">
 				<div class= "col-lg-3 col-sm-3">
 				</div>
 			<?php
@@ -23,7 +23,6 @@ get_header();
 				if ( !empty( $terms ) ){
 					// get the first term
 					$term = array_shift( $terms );
-					echo "<script>console.log( 'post " . $term->slug . "' );</script>";
 					if($term->slug == 'clothing'){
 						get_template_part('template-parts/content','clothing');
 					}else{
@@ -40,12 +39,14 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	<script>
-		function changeImage(smallImage,largeImage,selected){
+		function changeImage(caption,smallImage,largeImage,selected){
 			removeActiveLinks();	
 			document.querySelector("#SelectedThumbnail").src = smallImage;
 			setTimeout(() => {
 				document.querySelector("#SelectedThumbnail").src = largeImage;			
 			}, 0);
+			document.querySelector("#injiri-caption").textContent = caption;
+			document.querySelector("#injiri-caption-mobile").textContent = caption;
 			selected.classList.add('active');
 		}
 		
@@ -64,7 +65,6 @@ get_header();
 			}
 		}
 		var checkForArrows = function () {
-			console.log("checking")
 			if(document && document.querySelector('.collection-gallery-wrapper')){
 				if(document.querySelector('.collection-gallery-wrapper').clientWidth < document.querySelector('.collection-gallery-wrapper').scrollWidth){
 					document.querySelectorAll('.collection-gallery-arrows')[0].classList.add('active');
@@ -80,10 +80,13 @@ get_header();
 
 		
 		// document.querySelector(".collection-gallery-wrapper").addEventListener("load",checkForArrows)
-		if ( !!(window.addEventListener) )
-		window.addEventListener("DOMContentLoaded", checkForArrows)
-		else // MSIE
-		window.attachEvent("onload", checkForArrows)
+		// if ( !!(window.addEventListener) )
+		// window.addEventListener("DOMContentLoaded", checkForArrows)
+		// else // MSIE
+		// window.attachEvent("onload", checkForArrows)
+		window.onload = function(){
+			checkForArrows();
+		}
 		window.onresize = function(event) {
 			checkForArrows();
 		};

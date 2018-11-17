@@ -41,8 +41,8 @@ get_header();
 		endif;
 		?>
 		<a class="mute-icon" onClick="toggle()">
-			<img id="icon-unmute" src="<?php echo(get_template_directory_uri());?>/images/speaker.svg" >
-			<img id="icon-mute" hidden src="<?php echo(get_template_directory_uri());?>/images/speaker-mute.svg" >
+			<img id="icon-unmute" src="<?php echo(get_template_directory_uri());?>/images/speaker-mute.svg" >
+			<img id="icon-mute" hidden src="<?php echo(get_template_directory_uri());?>/images/speaker.svg" >
 		</a>
 		</main><!-- #main -->
 	</div><!-- #primary -->
