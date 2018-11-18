@@ -902,6 +902,15 @@ p {
     width: 32%;
 }
 
+.aeroMove {
+    transition: 0.4s;
+}
+
+.discoveMore a:hover .aeroMove {
+    margin-left: 8px;
+    color: black;
+}
+
 
 /* Techniques page end here */
 
