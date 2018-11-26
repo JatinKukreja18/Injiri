@@ -1028,7 +1028,7 @@ h6,.injiri-section-heading,.injiri-caption{
     margin-bottom: 53px;
     display: block;
 }
-.injiri-description{
+p,.injiri-description{
 	font-family: 'Gentium Basic', serif;
 	font-size: 12px;
 	letter-spacing : 0.02em;
@@ -1066,7 +1066,7 @@ h6,.injiri-section-heading,.injiri-caption{
 	align-items: center;
 }
 
-.post-links-header > span:nth-child(2){
+.post-links-header > span.title{
 	padding: 0px 14px;	
 } 
 .post-links-arrows > a{
@@ -1126,7 +1126,7 @@ h6,.injiri-section-heading,.injiri-caption{
 .injiri-wrapper{
 	/* margin-bottom: 280px; */
 	min-height: 100vh;
-	max-width: 1280px;
+	/* max-width: 1280px; */
 	overflow-x: hidden;
     background: #fff;
     padding: 188px 90px 60px 90px;
@@ -1557,6 +1557,9 @@ input[type="submit"]:hover{
 	transition: .5s;
 	overflow: hidden;
 	opacity: 0;
+	display: flex;
+	flex-direction: column;
+	
 }
 
 .stockist-place 
@@ -1947,6 +1950,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .collection-gallery-wrapper.clothing{
 	margin-top: 84px;
+	display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(46px, 1fr));
+    grid-gap: 8px;
 }
 .collection-gallery-wrapper::-webkit-scrollbar {
 	height:  0px;
@@ -2103,7 +2109,148 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 /* Story end here */
+/* Techniques Page starts  */
 
+
+/* Techniques page start here */
+
+.techInternal {
+    border-bottom: 1px solid;
+    padding-bottom: 100px;
+    justify-content: space-between;
+    padding-top: 28px;
+}
+.techInternal:first-child{
+	padding-top: 0px;
+}
+.techInternal:last-child {
+    border-bottom: 0;
+    padding-bottom: 0px;
+}	
+
+.techText .title{
+	margin-bottom: 14px;
+}
+.techText .title > a{
+    font-size: 10px;
+	margin: 0px;
+	font-family: 'Assistant', san-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.26em;
+    line-height: 1em;
+    color: #000;
+	text-transform: uppercase;
+	transition: 0.3s;
+}
+.techText .date {
+	font-family: 'Gentium Basic', serif;
+	font-size: 10px;
+	letter-spacing : 0.26em;
+	color : #000000;
+	line-height: 1em;
+	margin-bottom: 48px;
+}
+.techText .tech-description {
+	margin-bottom: 20px;
+	max-height: 5.7em;
+	overflow: hidden;
+}
+.techText .title >a:hover{
+	color: #a0a0a0;
+}
+
+.techText .link {
+    font-size: 10px;
+	color: #a0a0a0;
+	font-family: 'Assistant', san-serif;
+    font-size: 10px;
+	font-weight: 400;
+	transition: .3s;
+	text-transform: uppercase;
+    letter-spacing: 0.18em;
+    line-height: 1em;
+    color: #a0a0a0;
+}
+
+.techText .link:hover{
+    color: #000000;
+}
+
+.techText .link > span{
+	transition: transform.3s;
+	display:inline-block;
+}
+.techText .link:hover > span{
+	transform: translateX(3px);
+}
+
+.tech-col{
+	width: calc((100% / 7 ) * 3);
+    padding: 0px 6px;
+}
+.techInternal:nth-child(even) >.techImg,
+.techInternal:nth-child(odd) >.techText {
+	order:2;
+}
+.techInternal:nth-child(odd) >.techImg,
+.techInternal:nth-child(even) >.techText  {
+	order:1;
+}
+
+.techImg img {
+    width: 100%;
+}
+
+
+
+
+
+/* Techniques page end here */
+/* Press Page / Story Page */
+.press-gallery-wrapper{
+	align-items: flex-start;
+	flex-wrap: wrap;
+	margin-bottom: 100px;
+}
+.press-image{
+	margin-bottom: 12px;
+}
+.story-page-wrapper img{
+	display: block;
+	width: 100%;
+	margin: 80px 0px;
+}
+.story-page-wrapper blockquote{
+	margin: 56px 0px;
+	text-align: center;
+	position: relative;
+	font-style: italic;
+}
+
+.story-page-wrapper blockquote::after{
+	position: absolute;
+    content: close-quote;
+    /* width: 40px; */
+    height: auto;
+    font-family: Gentium Basic;
+    font-size: 36px;
+    right: -10px;
+    bottom: 0px;
+    line-height: 0px;
+}
+.story-page-wrapper blockquote::before{
+	position: absolute;
+    content: open-quote;
+    /* width: 40px; */
+    height: auto;
+    font-family: Gentium Basic;
+	font-size: 36px;
+    left: -18px;
+    top: 22px;
+    line-height: 0px;
+}
+/* Press Page/ Story Page ends */
 
 /* Custom Grid Css */
 .row {
@@ -2451,6 +2598,19 @@ input[type=number]::-webkit-outer-spin-button {
 	}
 }
 @media only screen and (max-width:767px){
+	.techInternal{
+		flex-direction: column;
+	}
+	.techInternal .techText,
+	.techInternal .techImg{
+		width: 100%
+	}
+	.techInternal:nth-child(even) .techImg{
+		order: 1;
+	}
+	.techInternal:nth-child(even) .techText{
+		order:2;
+	}
 	/* collection page mobile */
 	.collection-info-container{
 		display: flex;
@@ -2467,6 +2627,7 @@ input[type=number]::-webkit-outer-spin-button {
 	}
 	.collection-info-container .collection-gallery-wrapper{
 		margin: 0px;
+		display: flex;
 		order:2;
 	}
 	.placeholder-image-block{

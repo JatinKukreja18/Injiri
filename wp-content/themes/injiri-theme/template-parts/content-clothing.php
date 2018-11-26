@@ -11,7 +11,7 @@
 <div class= "col-lg-5 col-sm-5">
 <h3 class="post-links-header visible-mobile">
 			<?php previous_post_link('<span>%link</span>', '<',TRUE,'','type'); ?> 
-			<span><?php the_title(); ?></span>
+			<span class="title"><?php the_title(); ?></span>
 			<?php next_post_link('<span>%link</span>', '>',TRUE,'','type'); ?>
 	</h3>
 <?php if ( get_post_gallery() ) {
@@ -33,7 +33,7 @@
 <div class= "col-lg-3 col-sm-3 offset-1 collection-info-container">
 	<h3 class="post-links-header hidden-mobile">
 			<?php previous_post_link('<span>%link</span>', '<',TRUE,'','type'); ?> 
-			<span><?php the_title(); ?></span>
+			<span class="title"><?php the_title(); ?></span>
 			<?php next_post_link('<span>%link</span>', '>',TRUE,'','type'); ?>
 	</h3>
 	<p class="injiri-description">  <?php echo wp_strip_all_tags(strip_shortcodes(get_the_content())); ?> </p>		

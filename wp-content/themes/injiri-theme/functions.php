@@ -270,6 +270,53 @@ add_action( 'init', 'create_collection_taxonomies', 0 );
 	
 /*Custom Post type end*/
 
+
+/* NEW POST CREATION - TECHNIQUES */
+
+function cw_post_type_press() {
+
+	$supports = array(
+	'title', // post title
+	'editor', // post content
+	'author', // post author
+	'thumbnail', // featured images
+	'excerpt', // post excerpt
+	'custom-fields', // custom fields
+	'comments', // post comments
+	'revisions', // post revisions
+	'post-formats', // post formats
+	);
+	
+	$labels = array(
+	'name' => _x('press', 'plural'),
+	'singular_name' => _x('press', 'singular'),
+	'menu_name' => _x('Press', 'admin menu'),
+	'name_admin_bar' => _x('Press', 'admin bar'),
+	'add_new' => _x('Add New', 'add new'),
+	'add_new_item' => __('Add New Press Release'),
+	'new_item' => __('New Press Release'),
+	'edit_item' => __('Edit Press Release'),
+	'view_item' => __('View Press Release'),
+	'all_items' => __('All Press Releases'),
+	'search_items' => __('Search Press '),
+	'not_found' => __('No press releases found.'),
+	);
+	
+	$args = array(
+	'supports' => $supports,
+	'labels' => $labels,
+	'public' => true,
+	'query_var' => true,
+	'rewrite' => array('slug' => 'press'),
+	'has_archive' => true,
+	'hierarchical' => false,
+	);
+	register_post_type('press', $args);
+	}
+add_action('init', 'cw_post_type_press');
+	
+/*Custom Post type end*/
+
 /* NEW POST CREATION - Stockists */
 
 function cw_post_type_stockists() {

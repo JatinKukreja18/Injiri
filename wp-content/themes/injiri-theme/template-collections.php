@@ -73,8 +73,8 @@ endforeach;
 </div>
 <script>
 	function previewThumbnail(action,type,index){
-		if(action) 	document.querySelector(`.collection-thumbnail-${type}-` + index).classList.add("active")
-		else	document.querySelector(`.collection-thumbnail-${type}-` + index).classList.remove("active")	
+		if(action) 	document.querySelector(`.collection-thumbnail-${type}-` + index).classList.add("preview")
+		else	document.querySelector(`.collection-thumbnail-${type}-` + index).classList.remove("preview")	
 	}
 	function changeThumbnail(type,index){
 		removeAllThumbnail(type);
