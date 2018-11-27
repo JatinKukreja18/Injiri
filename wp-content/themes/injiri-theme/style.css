@@ -1058,9 +1058,9 @@ p,.injiri-description{
 .injiri-list .injiri-list-item.active .injiri-list-link{
 	color: #a0a0a0;
 }
-.injiri-list .injiri-list-item.active .injiri-list-link{
+/* .injiri-list .injiri-list-item.active .injiri-list-link{
 	cursor: default;
-}
+} */
 .post-links-header{
 	display: flex;
 	align-items: center;
@@ -1767,6 +1767,7 @@ margin-right: 6px;
 }
 span.wpcf7-not-valid-tip{
 	color: #a0a0a0;
+	font-style: italic;
 }
 div.wpcf7-response-output{
 	border: none !important;
@@ -2580,8 +2581,9 @@ input[type=number]::-webkit-outer-spin-button {
 		max-width: 100%;
 	}
 	.collection-gallery-wrapper.clothing .collection-gallery-item{
-		margin-bottom: 8px;
-		margin-right: 8px;
+		/* margin-bottom: 8px;
+		margin-right: 8px; */
+		margin: 0px;
 		max-width: calc(20% - 8px);
 		min-width: 46px;
 		
