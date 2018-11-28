@@ -2144,7 +2144,7 @@ input[type=number]::-webkit-outer-spin-button {
 	text-transform: uppercase;
 	transition: 0.3s;
 }
-.techText .date {
+.techText .date,.date {
 	font-family: 'Gentium Basic', serif;
 	font-size: 10px;
 	letter-spacing : 0.26em;
@@ -2202,10 +2202,95 @@ input[type=number]::-webkit-outer-spin-button {
 .techImg img {
     width: 100%;
 }
+/* technique internal page  */
+.technique-item  .date {
+margin-bottom: 24px;
+}
+.technique-item h3{
+	font-size: 12px;
+    letter-spacing: 0.26em;
+	line-height: 2em;
+	margin-bottom: 20px;
+}
+.technique-item .divider{
+	height: 1px;
+	width: 100%;
+	background: #a0a0a0;
+	margin-bottom: 83px;
+}
+/* Galleries in techniques */
+
+.technique-item  .gallery {
+	margin-bottom: 0px;
+	margin: 76px -6px;
+}
 
 
+.technique-item  .gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+	padding: 0px 6px;
+	margin: 0px;
+}
+.technique-item h2{
+	font-size : 12px;
+	color : #000000;
+	line-height: 2em;
+	margin-bottom: 40px;
+}
+.technique-item  .gallery-item a{
+	pointer-events: none;
+}
+.technique-item  .gallery-columns-1 .gallery-item {
+	max-width: 14.28%;
+}
+
+.technique-item  .gallery-columns-2 .gallery-item {
+	max-width: 28.56%;
+}
 
 
+.technique-item  .gallery-columns-3 .gallery-item {
+	max-width: 42.85%;
+}
+
+
+.technique-item  .gallery-columns-4 .gallery-item {
+	max-width: 57.14%;
+}
+
+
+.technique-item  .gallery-columns-5 .gallery-item {
+	max-width: 71.4%;
+}
+
+
+.technique-item  .gallery-columns-6 .gallery-item {
+	max-width: 85.71%;
+}
+
+
+.technique-item  .gallery-columns-7 .gallery-item {
+	max-width: 100%;
+}
+
+
+.technique-item .gallery-icon{
+	text-align: left;
+}
+.technique-item  .gallery-caption {
+	display: block;
+	font-family: 'Gentium Basic', serif;
+	font-size: 10px;
+	letter-spacing : 0.02em;
+	color : #000000;
+	line-height: 1.9em;
+	display: block;
+	font-style: italic;
+	text-align: left;
+}
 
 /* Techniques page end here */
 /* Press Page / Story Page */

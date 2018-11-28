@@ -13,8 +13,8 @@ query_posts(array('post_type' => 'techniques')); ?>
                 </div>
                 <div class="techText tech-col">
                     <h2 class="title">
-                        <!-- <a href="<php the_permalink() >"> -->
-                            <a>
+                        <a href="<?php the_permalink() ?>">
+                            <!-- <a> -->
                             <?php the_title(); ?>
                             <a>
                     </h2>
@@ -23,8 +23,8 @@ query_posts(array('post_type' => 'techniques')); ?>
                         <?php echo get_the_excerpt(); ?>
                     </p>
                     <p style="display:flex">
-                        <a class="link">
-                        <!-- <a class="link" href="<php the_permalink() >"> -->
+                        <!-- <a class="link"> -->
+                        <a class="link" href="<?php the_permalink() ?>">
                             discover more <span>></span> 
                         </a>
                     </p>
