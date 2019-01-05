@@ -5,7 +5,7 @@ query_posts(array('post_type' => 'techniques')); ?>
 
 <div class=" injiri-wrapper">
 	<div class="row">
-        <div class="col-lg-7 col-sm-7 offset-4">
+        <div class="col-lg-7 col-sm-12 offset-4">
         <?php while (have_posts()) : the_post(); ?>
             <div class="flex techInternal row">
                 <div class="tech-col techImg">

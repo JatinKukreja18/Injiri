@@ -13,8 +13,6 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main injiri-wrapper">
 		<div class="row" >
-				<div class= "col-lg-3 col-sm-3">
-				</div>
 				<?php
 					while ( have_posts() ) :
 						the_post();

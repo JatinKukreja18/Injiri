@@ -41,13 +41,18 @@ get_header();
 		endif;
 		?>
 		<a class="mute-icon" onClick="toggle()">
-			<img id="icon-unmute" src="<?php echo(get_template_directory_uri());?>/images/speaker-mute.svg" >
-			<img id="icon-mute" hidden src="<?php echo(get_template_directory_uri());?>/images/speaker.svg" >
+			<img id="icon-unmute" src="<?php echo(get_template_directory_uri());?>/images/speaker-mute.png" >
+			<img id="icon-mute" hidden src="<?php echo(get_template_directory_uri());?>/images/speaker.png" >
 		</a>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	<script>;
 			var video=document.getElementById("home-video");
+			if(!video){
+				console.log("no video");
+				document.querySelector("#icon-mute").hidden = true
+				document.querySelector("#icon-unmute").hidden = true
+			}
 		function toggle(){
 			video.muted = !video.muted;
 			if(video.muted){

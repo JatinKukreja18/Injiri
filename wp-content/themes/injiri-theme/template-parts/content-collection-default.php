@@ -8,12 +8,14 @@
  */
 
 ?>
-<div class= "col-lg-6 col-sm-6">
+<div class= "col-lg-6 col-sm-7">
 <h3 class="post-links-header visible-mobile">
 			<?php next_post_link('<span class="post-links-arrows left">%link</span>', '',TRUE,'','type'); ?>
 			<span class="title"><?php the_title(); ?></span>
 			<?php previous_post_link('<span class="post-links-arrows right">%link</span>', '',TRUE,'','type'); ?> 
-	</h3>		
+</h3>		
+<p class="injiri-description visible-mobile" style="margin-bottom:23px;">  <?php echo wp_strip_all_tags(strip_shortcodes(get_the_content())); ?> </p>		
+
 <?php if ( get_post_gallery() ) {
 		
 		$gallery        = get_post_gallery( get_the_ID(), false );
@@ -40,10 +42,9 @@
 		<script type="text/javascript">
 			if("<?php echo $key ?>" == 0){
 			const caption = "<?php echo wp_get_attachment_caption($value) ?>"
-			console.log(); 
 			setTimeout(() => {
-				document.querySelector("#injiri-caption").textContent = caption;
-				document.querySelector("#injiri-caption-mobile").textContent = caption;
+				if(document.querySelector("#injiri-caption")) document.querySelector("#injiri-caption").textContent = caption;
+				if(document.querySelector("#injiri-caption-mobile")) document.querySelector("#injiri-caption-mobile").textContent= caption;
 			}, 0);
 			}
 		</script>
@@ -64,13 +65,13 @@
 		?>
 				<!-- // get_template_part( 'template-parts/content', get_post_type() ); -->
 				</div>
-				<div class= "col-lg-2 col-sm-2 offset-1 collection-info-container">
+				<div class= "col-lg-2 col-sm-4 offset-sm-1 offset-1 collection-info-container">
 					 <h3 class="post-links-header hidden-mobile">
 						 <?php next_post_link('<span class="post-links-arrows left">%link</span>', '',TRUE,'','type'); ?>
 					 	<span class="title"><?php the_title(); ?></span>
 						 <?php previous_post_link('<span class="post-links-arrows right">%link</span>', '',TRUE,'','type'); ?> 
 					</h3>
-					<p class="injiri-description">  <?php echo wp_strip_all_tags(strip_shortcodes(get_the_content())); ?> </p>
+					<p class="injiri-description hidden-mobile">  <?php echo wp_strip_all_tags(strip_shortcodes(get_the_content())); ?> </p>
 					<p class="injiri-caption hidden-mobile" id="injiri-caption"></p>
 					
 </div>

@@ -4,7 +4,7 @@ get_header(); ?>
 
 <div class=" injiri-wrapper">
 	<div class="row">
-        <div class="col-lg-5 col-sm-5 offset-4 story-page-wrapper">
+        <div class="col-lg-5 col-sm-12 offset-4 story-page-wrapper">
         <?php while (have_posts()) : the_post(); ?>
             
                 <!-- <p class="date"><php echo get_the_date('d.m.Y')> </p> -->

@@ -13,7 +13,7 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main injiri-wrapper">
 			<div class="row" style="align-items:flex-start">
-				<div class= "col-lg-3 col-sm-3">
+				<div class= "col-lg-3 ">
 				</div>
 			<?php
 				while ( have_posts() ) :
@@ -45,9 +45,14 @@ get_header();
 			setTimeout(() => {
 				document.querySelector("#SelectedThumbnail").src = largeImage;			
 			}, 0);
-			document.querySelector("#injiri-caption").textContent = caption;
-			document.querySelector("#injiri-caption-mobile").textContent = caption;
+			if(document.querySelector("#injiri-caption")) document.querySelector("#injiri-caption").textContent = caption;
+			if(document.querySelector("#injiri-caption-mobile")) document.querySelector("#injiri-caption-mobile").textContent = caption;
 			selected.classList.add('active');
+			console.log("changed")
+			if(document.querySelector('html').clientWidth < 769){
+				if(document.querySelector('html').scrollTop) document.querySelector('html').scrollTop = document.querySelector('.placeholder-image-block').offsetTop - 20	;
+				if(document.querySelector('body').scrollTop) document.querySelector('body').scrollTop = document.querySelector('.placeholder-image-block').offsetTop - 20	;
+			}
 		}
 		
 		function removeActiveLinks(type){
@@ -65,7 +70,7 @@ get_header();
 			}
 		}
 		var checkForArrows = function () {
-			if(document && document.querySelector('.collection-gallery-wrapper')){
+			if(document && document.querySelector('.collection-gallery-wrapper.home-textiles')){
 				if(document.querySelector('.collection-gallery-wrapper').clientWidth < document.querySelector('.collection-gallery-wrapper').scrollWidth){
 					document.querySelectorAll('.collection-gallery-arrows')[0].classList.add('active');
 					document.querySelectorAll('.collection-gallery-arrows')[1].classList.add('active');

@@ -8,12 +8,17 @@
  */
 
 ?>
-<div class= "col-lg-5 col-sm-5">
-<h3 class="post-links-header visible-mobile">
+<div class= "col-lg-5 col-sm-6">
+	<!-- visible only on mobile -->
+	<h3 class="post-links-header visible-mobile">
 			<?php next_post_link('<span class="post-links-arrows left">%link</span>', '',TRUE,'','type'); ?>
 			<span class="title"><?php the_title(); ?></span>
 			<?php previous_post_link('<span class="post-links-arrows right">%link</span>', '',TRUE,'','type'); ?> 
 	</h3>
+	<p class="injiri-description visible-mobile" style="margin-bottom:23px;">  <?php echo wp_strip_all_tags(strip_shortcodes(get_the_content())); ?> </p>		
+
+	<!-- visible only on mobile ends-->
+
 <?php if ( get_post_gallery() ) {
 		
 		$gallery        = get_post_gallery( get_the_ID(), false );
@@ -30,13 +35,13 @@
 		?>
 				<!-- // get_template_part( 'template-parts/content', get_post_type() ); -->
 				</div>
-<div class= "col-lg-3 col-sm-3 offset-1 collection-info-container">
+<div class= "col-lg-3 col-sm-4 offset-sm-2 offset-1 collection-info-container">
 	<h3 class="post-links-header hidden-mobile">
 			<?php next_post_link('<span class="post-links-arrows left">%link</span>', '',TRUE,'','type'); ?>
 			<span class="title"><?php the_title(); ?></span>
 			<?php previous_post_link('<span class="post-links-arrows right">%link</span>', '',TRUE,'','type'); ?> 
 	</h3>
-	<p class="injiri-description">  <?php echo wp_strip_all_tags(strip_shortcodes(get_the_content())); ?> </p>		
+	<p class="injiri-description hidden-mobile">  <?php echo wp_strip_all_tags(strip_shortcodes(get_the_content())); ?> </p>		
 			
 	<?php if ( get_post_gallery() ) {
 		
@@ -57,10 +62,9 @@
 		<script type="text/javascript">
 			if("<?php echo $key ?>" == 0){
 			const caption = "<?php echo wp_get_attachment_caption($value) ?>"
-			console.log(); 
 			setTimeout(() => {
-				document.querySelector("#injiri-caption").textContent = caption;
-				document.querySelector("#injiri-caption-mobile").textContent = caption;
+				if(document.querySelector("#injiri-caption")) document.querySelector("#injiri-caption").textContent = caption;
+				if(document.querySelector("#injiri-caption-mobile")) document.querySelector("#injiri-caption-mobile").textContent= caption;
 			}, 0);
 			}
 		</script>

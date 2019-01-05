@@ -19,7 +19,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<link href="https://fonts.googleapis.com/css?family=Gentium+Basic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Gentium+Basic" rel="stylesheet">
+ -->
 	<link href="https://fonts.googleapis.com/css?family=Assistant:300,400,600,700" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
@@ -35,7 +37,7 @@
 			<?php
 			if ( is_home() || is_front_page() ) :
 				?>
-				class="menulogoContainer injiri-header injiri-header-home col-sm-2 col-lg-2	"
+				class="menulogoContainer injiri-header injiri-header-home  col-lg-2	"
 				<?php
 			endif;
 			?>
@@ -43,7 +45,7 @@
 
 			if ( !is_home() && !is_front_page() ) :
 				?>
-				class="menulogoContainer injiri-header col-sm-2 col-lg-2"
+				class="menulogoContainer injiri-header  col-lg-2"
 
 			<?php
 			endif;
@@ -114,6 +116,8 @@
 			document.querySelector('.hamContainer').classList.toggle("animate");
 			document.querySelector('.mobileMenusContainer').classList.toggle("open");
 			document.querySelector('.overlay').classList.toggle("showOverlay");
+			document.querySelector('body').classList.toggle("fixed");
+			document.querySelector('html').classList.toggle("fixed");
 		}
 		if(window.location.pathname.toString().indexOf("collections") != -1){
 			document.querySelector("#menu-item-187").classList.add("current-menu-item")
