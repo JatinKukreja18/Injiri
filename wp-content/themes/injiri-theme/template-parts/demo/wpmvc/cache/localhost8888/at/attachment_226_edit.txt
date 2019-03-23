@@ -1,0 +1,1 @@
+a:4:{s:5:"value";s:79:"http://localhost:8888/injiri/wp-content/uploads/2018/11/226-IMG_2902-170x65.jpg";s:10:"write_time";i:1541914283;s:10:"expired_in";i:2592000;s:12:"expired_time";i:1544506283;}

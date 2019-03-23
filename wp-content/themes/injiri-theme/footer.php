@@ -12,30 +12,30 @@
 ?>
 
 	</div><!-- #content -->
-
     <footer id="colophon" class="site-footer 
-    <?php if ( is_home() || is_front_page() ) :?>
-        fixed 
+    
+    <?php if ( is_front_page() ) :?>
+        fixed hidden
         <?php endif?>
         <?php if ( !is_home() && !is_front_page() ) :?>
         unfixed 
         <?php endif?>footerContainer">
-    <div id="footer-sidebar" class="footer-sections">
-        <div id="footer-sidebar1">
+    <div id="footer-sidebar" class="footer-sections row">
+        <div id="footer-sidebar1" class="col-sm-3">
             <?php
             if(is_active_sidebar('footer-sidebar-1')){
             dynamic_sidebar('footer-sidebar-1');
             }
             ?>
         </div>
-        <div id="footer-sidebar2">
+        <div id="footer-sidebar2" class="col-sm-6 col-lg-7">
             <?php
             if(is_active_sidebar('footer-sidebar-2')){
             dynamic_sidebar('footer-sidebar-2');
             }
             ?>
         </div>
-        <div id="footer-sidebar3">
+        <div id="footer-sidebar3" class="col-sm-3 col-lg-2">
             <?php
             if(is_active_sidebar('footer-sidebar-3')){
             dynamic_sidebar('footer-sidebar-3');

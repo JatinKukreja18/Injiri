@@ -261,7 +261,7 @@ add_action( 'init', 'create_collection_taxonomies', 0 );
 	'public' => true,
 	'query_var' => true,
 	'rewrite' => array('slug' => 'techniques'),
-	'has_archive' => true,
+	'has_archive' => false,
 	'hierarchical' => false,
 	);
 	register_post_type('techniques', $args);
@@ -308,7 +308,7 @@ function cw_post_type_press() {
 	'public' => true,
 	'query_var' => true,
 	'rewrite' => array('slug' => 'press'),
-	'has_archive' => true,
+	'has_archive' => false,
 	'hierarchical' => false,
 	);
 	register_post_type('press', $args);
@@ -362,6 +362,12 @@ function cw_post_type_stockists() {
 	
 /*Custom Post type end*/
 
+add_action( 'wp', 'deactivate_rocket_lazyload_on_single' );
+function deactivate_rocket_lazyload_on_single() {
+    if ( is_front_page() ) {
+        add_filter( 'do_rocket_lazyload', '__return_false' );
+    }
+}
 /**
  * Enqueue scripts and styles.
  */

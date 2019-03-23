@@ -64,6 +64,12 @@ get_header();
 				document.querySelector("#icon-mute").hidden = false
 			}
 		}
+		(function() {
+		document.querySelector('#wptime-plugin-preloader').style.opacity  = 0;
+		document.querySelector('#wptime-plugin-preloader').style.zIndex  = 0;
+
+
+		})();
 		// window.onload = (function (oldOnLoad) {
 		// 	return function () {
 		// 	if (oldOnLoad) { 
@@ -76,4 +82,4 @@ get_header();
 		// })(window.onload);
 	</script>
 <?php
-get_footer();
+	get_footer();

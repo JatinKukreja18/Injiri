@@ -1,0 +1,1059 @@
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+@font-face {
+    font-family: "Assistant-Regular";
+    src: url(../assets/fonts/Assistant-Regular.ttf)
+}
+
+@font-face {
+    font-family: "GenBasI";
+    src: url(../assets/fonts/GenBasI.ttf);
+}
+
+@font-face {
+    font-family: "GenBasR";
+    src: url(../assets/fonts/GenBasR.ttf);
+}
+
+@font-face {
+    font-family: "GenBasR";
+    src: url(../assets/fonts/MyriadPro-Regular.otf);
+}
+
+
+/* Standar CSS */
+
+input,
+button {
+    outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    padding: 0;
+    list-style-type: none;
+    /* margin-bottom: 0 !important;
+    margin-top: 0; */
+    margin: 0 !important;
+}
+
+a {
+    color: inherit !important;
+    text-decoration: none;
+    background-color: inherit !important;
+}
+
+textarea,
+a:focus,
+a:hover {
+    text-decoration: none !important;
+    outline: 0px auto -webkit-focus-ring-color !important;
+    color: inherit !important;
+}
+
+
+/* Standar CSS */
+
+
+/* Home Page CSS */
+
+.video {
+    width: 100%;
+    object-fit: cover;
+    min-height: 100vh;
+}
+
+.homeVid {
+    position: relative;
+    margin-bottom: 279px;
+    z-index: 100;
+    width: 100%;
+}
+
+.menus .menusItem:last-child {
+    padding-bottom: 0;
+}
+
+.menusItem {
+    padding-bottom: 16px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12.5px;
+    letter-spacing: 3px;
+    font-family: 'Conv_GenBasR';
+}
+
+.menulogoContainer {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 50px 7%;
+    z-index: 1001;
+}
+
+.logoContainer {
+    /* padding-bottom: 115px; */
+}
+
+.logo {
+    max-width: 188px;
+    min-width: 14%;
+}
+
+.homeHeader {
+    background-color: unset;
+}
+
+
+/* Home Page CSS */
+
+
+/* For Footer CSS */
+
+.footerContainer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 92px 7% 46px 7%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footerContent {
+    width: 210px;
+    min-width: 15%;
+}
+
+.emailInputContainer {
+    padding-bottom: 7px;
+}
+
+.inputEmail {
+    border: none;
+    padding: 0;
+    color: #a0a0a0;
+    border-bottom: 1px solid #a9a7a7;
+    background: none;
+    width: 100%;
+    font-size: 11px;
+    font-style: italic;
+    padding-bottom: 1px;
+}
+
+.inputEmail:focus,
+.inputEmail:hover {
+    border-bottom: 1px solid black;
+}
+
+.footerMenus li:first-child {
+    padding-bottom: 20px;
+}
+
+.footerMenus li:last-child {
+    padding-bottom: 0;
+}
+
+.footerMenus li {
+    padding-bottom: 8px;
+    font-family: 'Conv_GenBasR';
+    list-style: none;
+    letter-spacing: 3px;
+    color: rgb(160, 160, 160);
+    font-size: 10px;
+}
+
+.menusLink {
+    position: relative;
+    color: inherit;
+}
+
+.menusLink:hover::before {
+    width: 100%;
+}
+
+.menusLink::before {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    height: 2px;
+    width: 0;
+    bottom: -3px;
+    transition: 0.6s;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.blackHover:hover .footerItem .menusLink::before,
+.blackHover:hover .menusItem .menusLink::before {
+    background-color: black;
+}
+
+
+/* For Footer CSS */
+
+
+/* For Hamburger */
+
+.mobileMenusContainer {
+    position: fixed;
+    top: 0;
+    padding: 85px 25px;
+    background-color: #fff;
+    width: 300px;
+    right: 0;
+    height: 100%;
+    transform: translateX(50%);
+    transition: 0.5s;
+    z-index: 99999;
+    opacity: 0;
+}
+
+.mobileMenusContainer.open {
+    transform: translateX(0);
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+
+.mobileMenusContainer.open .mobileMensu .menusItem {
+    transform: translate(0);
+    opacity: 1;
+}
+
+.mobileMenusContainer.open .mobileMensu .menusItem:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+.mobileMenusContainer.open .mobileMensu .menusItem:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.mobileMenusContainer.open .mobileMensu .menusItem:nth-child(3) {
+    transition-delay: 0.6s;
+}
+
+.mobileMenusContainer.open .mobileMensu .menusItem:nth-child(4) {
+    transition-delay: 0.8s;
+}
+
+.mobileMenusContainer.open .mobileMensu .menusItem:nth-child(5) {
+    transition-delay: 1s;
+}
+
+.mobileMensu .menusItem {
+    color: black;
+    font-size: 15px;
+    border-bottom: 1px solid;
+    padding-bottom: 4px;
+    margin-bottom: 30px;
+    transform: translate(110%);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.hamContainer {
+    position: fixed;
+    width: 30px;
+    height: 23px;
+    top: 38px;
+    cursor: pointer;
+    z-index: 999999;
+    right: 26px;
+}
+
+.hamLine {
+    transition: 0.5s;
+    background-color: #fff;
+    width: 14px;
+    height: 2px;
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+
+.hamSecond {
+    top: 0px;
+}
+
+.hamThird,
+.hamFourth {
+    top: 8px;
+}
+
+.hamFourth,
+.hamSixth,
+.hamSecond {
+    left: 14px;
+}
+
+.hamFifth,
+.hamSixth {
+    top: 16px;
+}
+
+.hamContainer.animate .hamLine {
+    background-color: red;
+}
+
+.hamContainer.animate .hamLine.hamThird,
+.hamContainer.animate .hamLine.hamFourth {
+    opacity: 0;
+}
+
+.hamContainer.animate .hamLine.hamThird {
+    transform: translateX(-18px);
+}
+
+.hamContainer.animate .hamLine.hamFourth {
+    transform: translateX(18px);
+}
+
+.hamContainer.animate .hamLine.hamFirst {
+    transform: rotate(45deg) translate(4.3px, -1px);
+}
+
+.hamContainer.animate .hamLine.hamSecond {
+    transform: rotate(-45deg) translate(-4px, -1px);
+    left: 18px;
+}
+
+.hamContainer.animate .hamLine.hamFifth {
+    transform: rotate(-45deg) translate(2.3px, -2px);
+    left: 3px;
+}
+
+.hamContainer.animate .hamLine.hamSixth {
+    transform: rotate(45deg) translate(-3px, -2.3px);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    height: 100%;
+    z-index: 9999;
+    opacity: 0.6;
+    pointer-events: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.overlay.showOverlay {
+    pointer-events: unset;
+    opacity: 0.6;
+}
+
+
+/* For Hamburger */
+
+
+/* Reach Page Css Start Here */
+
+.threeHundredFive {
+    position: relative;
+    margin: 184px 7% 184px 33%;
+    z-index: 1001;
+}
+
+.unfixed {
+    position: unset;
+}
+
+.noMargin {
+    margin: 0;
+}
+
+.whiteMenus .menusItem {
+    color: #bdbaba;
+    font-weight: bold;
+}
+
+.hamLineRed .hamLine {
+    background-color: black;
+}
+
+.accordion-spacing {
+    text-transform: uppercase;
+}
+
+.stockists {
+    padding-bottom: 56px;
+    font-family: 'Conv_GenBasR';
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.off .accordionItemContent {
+    height: 0px;
+    transition: height 1s ease-out;
+    transform: scaleY(0);
+    float: left;
+    display: block;
+}
+
+.open .accordionItemContent {
+    display: block;
+}
+
+.open .accordionItemHeading {
+    color: #7f8c8d;
+}
+
+.reached * {}
+
+.threeTwenty {
+    position: relative;
+    margin: 184px 7% 184px 33%;
+    z-index: 1001;
+}
+
+.unfixed {
+    position: unset;
+}
+
+.noMargin {
+    margin: 0;
+}
+
+.whiteMenus .menusItem {
+    color: #bdbaba;
+    font-weight: bold;
+}
+
+.hamLineRed .hamLine {
+    background-color: black;
+}
+
+.accordion-spacing {
+    text-transform: uppercase;
+}
+
+.stockists {
+    padding-bottom: 56px;
+    font-family: 'Conv_GenBasR';
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.off .accordionItemContent {
+    height: 0px;
+    overflow: hidden;
+}
+
+.on .accordionItemContent,
+.on .accordionItemContent {
+    height: auto;
+    margin-bottom: 0;
+}
+
+.on .bottomhundreen {
+    padding-bottom: 100px;
+}
+
+.on .accordionItemHeading {
+    color: #7f8c8d;
+}
+
+.accordionItem .accordionItemHeading {
+    cursor: pointer;
+}
+
+.bothTwentyFive {
+    padding: 0px 25px;
+}
+
+.subLocation {
+    margin-top: 0;
+    color: black;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.bottomthirty {
+    margin-bottom: 30px;
+}
+
+.accordionItemHeading {
+    font-size: 15px;
+    font-family: 'Conv_GenBasR';
+    color: #444141;
+    letter-spacing: 2px;
+}
+
+.bottomSeventy {
+    padding-top: 70px;
+}
+
+.addresContainer .bottomthirty:last-child {
+    margin-bottom: 0;
+}
+
+.address {
+    font-family: 'Conv_GenBasR';
+    letter-spacing: 2px;
+    font-size: 12px;
+    padding-bottom: 3px;
+    text-transform: uppercase;
+}
+
+.address:last-child {
+    padding-bottom: 0;
+}
+
+.oneSixtyEight {
+    padding-bottom: 168px;
+}
+
+.bottomFiftySix {
+    margin: 0;
+    padding-bottom: 56px;
+}
+
+.enquires {
+    font-size: 14px;
+    font-family: 'Conv_GenBasR';
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: black;
+    margin-top: 0;
+}
+
+.sixtyFive {
+    padding-bottom: 65px;
+}
+
+.press {
+    font-size: 12px;
+}
+
+.socialMedia {
+    padding-bottom: 2px;
+}
+
+.socialMedia:last-child {
+    padding-bottom: 0;
+}
+
+.fortySix {
+    margin: 0;
+    padding-bottom: 46px;
+}
+
+.flex {
+    display: flex
+}
+
+.widthFull {
+    width: 100%;
+}
+
+.rightTwentyPix {
+    padding-right: 20px;
+}
+
+.textField {
+    padding: 0;
+    border: none;
+    border-bottom: 2px solid black;
+    font-style: italic;
+    font-family: 'Conv_GenBasR';
+    font-size: 16px;
+    color: black;
+    width: 100%;
+    resize: none;
+    background-color: unset;
+    border-radius: 0px;
+    outline: none;
+}
+
+.select {
+    color: #8a8a8a;
+}
+
+.inputRow {
+    margin-bottom: 20px;
+}
+
+.inputRow div:last-child {
+    padding-right: 0;
+}
+
+[type="select"] {
+    background-image: url(../assets/icons/down-aero.svg);
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    -webkit-appearance: none;
+    outline: none;
+}
+
+.inputsContainer .inputRow:last-child {
+    margin-bottom: 0;
+}
+
+.submit {
+    border: none;
+    padding: 0;
+    font-family: 'Conv_GenBasR';
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #928f8f;
+    font-size: 16px;
+    transition: 0.5s;
+    background-color: unset;
+}
+
+.submit:hover {
+    border: 1px solid black;
+    padding: 11px 21px;
+    background-color: black;
+    color: #fff;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+
+/* Reach Page Css end Here */
+
+
+/* For Collection Page */
+
+.sideBar {
+    position: absolute;
+    top: 172px;
+}
+
+.itemCenter {
+    align-items: center;
+}
+
+.fiftyPercent {
+    width: 50%;
+}
+
+.fiftyPercentMargin {
+    margin: 150px 120px 150px auto;
+}
+
+.collectionLinks {
+    width: 25%;
+    margin: 0 auto;
+    min-width: 176px;
+    text-transform: uppercase;
+}
+
+.bottomTweHun .itemCenter {
+    padding-bottom: 200px;
+}
+
+.bottomTweHun .itemCenter:last-child {
+    padding-bottom: 0px;
+}
+
+.linkItem li {
+    font-family: Gentium Basic Regular;
+    Letter-spacing: 0.26em;
+    color: #000000;
+    padding-bottom: 14px;
+    font-size: 12px;
+}
+
+.linkItem li:hover {
+    color: #A0A0A0;
+}
+
+.linkItem li:last-child {
+    padding-bottom: 0;
+}
+
+.collectionLinks h6 {
+    padding-bottom: 40px;
+    letter-spacing: 0.18em;
+    color: #000000;
+    font-weight: 400;
+    font-family: Assistant-Regular;
+    font-size: 10px
+}
+
+
+/* Gallery Section */
+
+.previewImg {
+    text-align: center;
+    padding-bottom: 38px;
+}
+
+.previewImg img {
+    height: 500px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(62px, 1fr));
+    grid-gap: 8px 8px;
+}
+
+.galleryImg img {
+    width: 67px;
+    height: 82px;
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+.selected img {
+    opacity: 1;
+}
+
+.sixtyEightMargin {
+    width: 68%;
+    margin: 150px 84px 150px auto;
+}
+
+.leftTwelPecent {
+    padding-left: 12%;
+}
+
+.gallerContent {
+    font-family: Assistant-Regular;
+}
+
+.gallerContent p:nth-child(2) {
+    padding: 50px 0px;
+}
+
+.collectionName {
+    padding: 0px 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+
+/* Gallery end here */
+
+
+/* Collection Page end here */
+
+
+/* For story page */
+
+.storyContainer {
+    max-width: 40%;
+    margin: 172px 0 0 40%;
+}
+
+.content h1 {
+    font-family: Assistant-Regular;
+    font-size: 12px;
+    padding-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.storyImgContainer {
+    padding: 60px 0px;
+}
+
+.storyImgContainer img {
+    width: 100%;
+    height: max-content;
+    object-fit: cover;
+}
+
+.content p {
+    padding-bottom: 30px;
+    font-family: 'Conv_GenBasR';
+}
+
+.blockquote {
+    padding: 18px 11px;
+    margin: 0;
+    border: none;
+    font-size: 13px;
+    font-family: 'Conv_GenBasR';
+    text-align: center;
+    text-transform: uppercase;
+    font-style: italic;
+    position: relative;
+    line-height: 2;
+}
+
+.blockIcon {
+    position: absolute;
+}
+
+.blockquoteLeft {
+    left: -34px;
+}
+
+.blockquoteRight {
+    right: -34px;
+}
+
+.bottomHundredFifty {
+    padding-bottom: 150px;
+}
+
+
+/* Story end here */
+
+
+/* Techniques page start here */
+
+.techInternal {
+    border-bottom: 1px solid;
+    padding-bottom: 100px;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+.techText {
+    /* padding-left: 100px; */
+}
+
+.techContainer {
+    max-width: 58%;
+    margin: 145px 0 0 33%;
+}
+
+.techText h1,
+span {
+    font-family: Assistant-Regular;
+    text-transform: uppercase;
+}
+
+.techText h1,
+h2,
+span {
+    letter-spacing: 3px;
+}
+
+.techText h2,
+p {
+    font-family: 'Conv_GenBasR';
+}
+
+.techText h1 {
+    font-size: 12px;
+    padding-bottom: 10px;
+}
+
+.techText h2 {
+    font-size: 10px;
+    padding-bottom: 50px;
+}
+
+.techText p {
+    font-size: 15px;
+    padding-bottom: 15px;
+    line-height: 1.5;
+}
+
+.techText span {
+    font-size: 12px;
+    color: #a9a9a9;
+}
+
+.noPadding {
+    padding: 0;
+}
+
+.techRightCol {
+    width: 50%;
+}
+
+.flexEnd {
+    justify-content: flex-end;
+}
+
+.techImg img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.techContainer .techInternal:last-child {
+    border-bottom: 0;
+    padding-bottom: 10px;
+}
+
+.leftImg img {
+    width: 100%;
+}
+
+.techLeftCol {
+    width: 32%;
+}
+
+.aeroMove {
+    transition: 0.4s;
+}
+
+.discoveMore a:hover .aeroMove {
+    margin-left: 8px;
+    color: black;
+}
+
+
+/* Techniques page end here */
+
+
+/* For Responsiveness */
+
+@media (max-width:500px) {
+    .techContainer {
+        max-width: 100%;
+        margin: 145px 20px 0px 20px;
+    }
+    .techInternal {
+        padding-top: 0;
+    }
+    .menulogoContainer {
+        padding: 30px 28px;
+    }
+    .logoContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 0;
+    }
+    .menus {
+        display: none;
+    }
+    .threeHundredFive {
+        position: unset;
+    }
+}
+
+@media (max-width:694px) {
+    .fiftyPercentMargin {
+        margin: 150px 50px 150px auto;
+        width: 58%;
+    }
+}
+
+@media (max-width:510px) {
+    .fiftyPercentMargin {
+        margin: 150px 50px 150px auto;
+        width: 100%;
+        padding: 0px 30px;
+    }
+    .collectionLinks {
+        margin: 0px 0px 0px auto;
+        padding: 0px 8px;
+    }
+}
+
+@media (max-width:400px) {
+    .collectionFlex {
+        flex-direction: column;
+        text-align: center;
+    }
+    .collectionLinks {
+        margin: 0;
+        padding: 30px 0px;
+    }
+    .bottomTweHun .itemCenter {
+        padding-bottom: 60px;
+    }
+}
+
+@media (max-width:879px) {
+    .gallerContent {
+        padding-left: 22px;
+    }
+    .sixtyEightMargin {
+        margin: 150px 14px 150px auto;
+    }
+}
+
+@media (max-width:787px) {
+    .sixtyEightMargin {
+        width: 72%;
+    }
+}
+
+@media (max-width:769px) {
+    .sixtyEightMargin {
+        flex-direction: column;
+    }
+}
+
+@media (min-width:500px) {
+    .hamContainer,
+    .overlay {
+        display: none;
+    }
+    .logo {
+        opacity: 1;
+    }
+    .mobileMenusContainer {
+        display: none;
+    }
+}
+
+@media (max-width:625px) {
+    .storyContainer {
+        max-width: 50%;
+    }
+}
+
+@media (max-width:500px) {
+    .sixtyEightMargin {
+        width: 100%;
+    }
+    .gallerContent {
+        padding: 0;
+    }
+    .sixtyEightMargin {
+        padding: 0px 20px;
+    }
+    .storyContainer {
+        max-width: 100%;
+        margin-left: 0;
+        padding: 0px 40px;
+    }
+    .blockquoteLeft {
+        left: 0px;
+    }
+    .blockquoteRight {
+        right: 0px;
+    }
+    .bottomHundredFifty {
+        padding-bottom: 60px;
+    }
+    .storyImgContainer img {
+        height: auto;
+    }
+}
+
+@media (max-width:624px) {
+    .techInternal {
+        flex-direction: column;
+    }
+    .techLeftCol,
+    .techRightCol {
+        width: 100%;
+        padding-bottom: 20px;
+    }
+}
+
+
+/* For Responsiveness */
