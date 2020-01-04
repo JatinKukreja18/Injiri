@@ -67,7 +67,11 @@ get_header();
 		(function() {
 		document.querySelector('#wptime-plugin-preloader').style.opacity  = 0;
 		document.querySelector('#wptime-plugin-preloader').style.zIndex  = 0;
-
+			let v=document.getElementById("home-video");
+			v.addEventListener('loadeddata', function() {
+				console.log("Loaded the video's data!");
+				document.querySelector("#home-fallback-image").classList.add('video-loaded')
+			}, false);
 
 		})();
 		// window.onload = (function (oldOnLoad) {

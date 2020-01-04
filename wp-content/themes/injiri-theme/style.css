@@ -1301,6 +1301,23 @@ body.fixed,html.fixed{
 	z-index: 1;
 	background: rgba(0, 0, 0, .2);
 } */
+#home-fallback-image{
+	background-image: url(https://www.injiri.co.in/wp-content/uploads/2019/04/Landingpage_27inch.jpg);
+	background-position: center;
+	background-size: cover;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	transition: 1s;
+	z-index: 1;
+	opacity: 1;
+}
+#home-fallback-image.video-loaded{
+	z-index: -1;
+	opacity: 0;
+}
 .su-slider.home-slider .su-slider-pagination{
 	bottom: 60px;
     top: auto;
@@ -1310,7 +1327,6 @@ body.fixed,html.fixed{
 	z-index: 2;
     height: auto;
 }
-
 .su-slider.home-slider .su-slider-pagination span{
 	margin: 0px 6px;
 	width: 12px;
@@ -1347,6 +1363,23 @@ body.fixed,html.fixed{
     bottom: 0;
 	width: 100%;
 	z-index: 0;
+}
+.footer-credits{
+	margin: 0px; 
+	margin-top: 17px; 
+	color: #d1d1d1; 
+	font-size: 10px; 
+	letter-spacing: 3px; 
+	text-transform: uppercase; 
+	position: absolute; 
+	bottom: 0px; 
+	line-height: 12px;
+	white-space: nowrap;	
+}
+
+.footer-credits.right{
+	display: inline-block;
+	bottom: -24px;
 }
 .footerContainer.unfixed{
 	padding-top: 50px 
@@ -1718,6 +1751,20 @@ input[type="submit"]:hover{
 
 .stockist-place .stockist-subplace .addresses{
 	white-space: pre-line;
+}
+.stockist-place .stockist-subplace .addresses p{
+	font-family: 'Assistant', san-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    line-height: 1.5em;
+    color: #a0a0a0;
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+    display: inline-block;
+}
+.stockist-place .stockist-subplace .addresses p:last-child{
+	margin-bottom: 0px;
 }
 .stockist-close{
 	display: none;
@@ -2717,6 +2764,62 @@ margin-bottom: 24px;
 .technique-item .gallery-icon img{
 	width: 100%;
 }
+.technique-item h6,.technique-item .wp-caption-text{
+	display: block;
+	font-family: 'Gentium Basic', serif;
+	font-size: 10px;
+	letter-spacing : 0.02em;
+	color : #000000;
+	line-height: 1.9em;
+	display: block;
+	font-style: italic;
+	text-align: left;
+	text-transform: none;
+	margin-bottom: 45px;
+}
+.technique-item h6 img:last-of-type{
+	padding-right: 0px;
+}
+.technique-item h6 img:first-of-type{
+	padding-left: 0px;
+}
+/* technique columns for images */
+.technique-item h5{
+	margin: 76px -6px;
+}
+.technique-item  .column-1 {
+	padding: 0px 6px; width: 14.28%;
+}
+
+.technique-item  .column-2  {
+	padding: 0px 6px; width: 28.56%;
+}
+
+
+.technique-item  .column-3  {
+	padding: 0px 6px; width: 42.85%;
+}
+
+
+.technique-item  .column-4  {
+	padding: 0px 6px; width: 57.14%;
+}
+
+
+.technique-item  .column-5  {
+	padding: 0px 6px; width: 71.4%;
+}
+
+
+.technique-item  .column-6  {
+	padding: 0px 6px; width: 85.71%;
+}
+
+
+.technique-item  .column-7  {
+	/* padding: 0px 6px;  */
+	width: 100%;
+}
 /* Techniques page end here */
 /* Press Page / Story Page */
 .press-gallery-wrapper{
@@ -3199,6 +3302,14 @@ margin-bottom: 24px;
 	} */
 }
 @media only screen and (max-width: 1024px){
+	.footer-credits.right{
+		display: inline-block;
+		margin: 0px;
+		bottom: -24px;
+	}
+	.footer-credits.left{
+		display: none;
+	}
 	.mute-icon{
 		display: block;
     position: fixed;
@@ -3247,6 +3358,14 @@ margin-bottom: 24px;
     }
 }
 @media only screen and (max-width:767px){
+	.footer-credits.right{
+		display: none;
+	}
+	.footer-credits.left{
+		display: inline-block;
+		margin: 0px;
+		bottom: 0px
+	}
 	.prev-image-arrow,.next-image-arrow{
 		display: block;
 	}
@@ -3444,6 +3563,9 @@ margin-bottom: 24px;
 	}
 	.mobile-collection-arrows.right{
 		right: 0px;
+	}
+	#home-fallback-image{
+		display:none;
 	}
 }
 @media only screen and (min-width:768px) and (max-width:1024px){

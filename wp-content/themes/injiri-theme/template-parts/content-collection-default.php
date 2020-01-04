@@ -24,7 +24,7 @@
 		$first_image_full = wp_get_attachment_image_src( $pieces[0], 'full'); 
 		?>
 	<div class="placeholder-image-block">
-		<img class="placeholder-image" src="<?php echo(get_template_directory_uri());?>/images/placeholder.jpg"/>				
+		<img class="placeholder-image" src="<?php echo(get_template_directory_uri());?>/images/placeholder.jpg" sizes="100%"/>				
 		<img id="SelectedThumbnail" src="<?php echo $first_image_full[0] ?>"/>
 		<a class="prev-image-arrow-link" onClick="changeMainImage(-1)">
 			<span class="prev-arrow" ></span>
@@ -39,7 +39,8 @@
 	<div class="collection-gallery-wrapper" >
 		<?php foreach ($pieces as $key => $value ) { 
 
-			$image_medium   = wp_get_attachment_image_src( $value, 'large'); 
+			$image_large   = wp_get_attachment_image_src( $value, 'large'); 
+			$image_medium   = wp_get_attachment_image_src( $value, 'medium'); 
 			$image_thumbnail   = wp_get_attachment_image_src( $value, 'thumbnail'); 
 			$image_full     = wp_get_attachment_image_src( $value, 'full'); 
 			$caption = wp_get_attachment_caption($value)
@@ -57,9 +58,11 @@
 		</script>
 			<a class="collection-gallery-item 
 			collection-gallery-item-<?php echo $key; ?> 
-			<?php if($key ==0) echo 'active' ?>" onClick="changeImage('<?php echo $caption ?>','<?php echo $image_medium[0] ?>','<?php echo $image_full[0] ?>',this)" 
+			<?php if($key ==0) echo 'active' ?>" onClick="changeImage('<?php echo $caption ?>','<?php echo $image_medium[0] ?>','<?php echo $image_large[0] ?>','<?php echo $image_full[0] ?>',this,<?php echo $key ;?>)" 
 			rel="lightbox"
-			data-image-value="<?php echo $image_full[0] ?>">
+			data-image-large="<?php echo $image_full[0] ?>"
+			data-image-medium="<?php echo $image_large[0] ?>"
+			data-image-small="<?php echo $image_medium[0] ?>">
 				<img class="collection-gallery-item-image" src="<?php echo $image_thumbnail[0] ?>"/>
 				
 			</a>

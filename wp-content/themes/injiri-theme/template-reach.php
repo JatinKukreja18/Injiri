@@ -54,7 +54,7 @@ while (have_posts()) : the_post(); ?>
 				 			.get_the_title().
 							 "</span>
 							 <div class='addresses'>"
-							 .get_the_content().
+							 .wpautop( get_the_content(), false ).
 							 "
 							 </div>
 							

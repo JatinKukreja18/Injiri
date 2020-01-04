@@ -16,25 +16,25 @@ get_header();
 				<div class= "col-lg-3 ">
 				</div>
 			<?php
-				while ( have_posts() ) :
-					the_post();
-					?> 
-				<?php $terms = get_the_terms( $post->ID, 'type' );
-				if ( !empty( $terms ) ){
-					// get the first term
-					$term = array_shift( $terms );
-					if($term->slug == 'clothing'){
-						get_template_part('template-parts/content','clothing');
-					}else{
-						get_template_part('template-parts/content','collection-default');
-					}
-				} ?>
-				
-					<?php
-			endwhile; // End of the loop.
-			?>
+while (have_posts()):
+    the_post();
+    ?>
+					<?php $terms = get_the_terms($post->ID, 'type');
+    if (!empty($terms)) {
+        // get the first term
+        $term = array_shift($terms);
+        if ($term->slug == 'clothing') {
+            get_template_part('template-parts/content', 'clothing');
+        } else {
+            get_template_part('template-parts/content', 'collection-default');
+        }
+    }?>
+
+						<?php
+endwhile; // End of the loop.
+?>
 			</div>
-		
+
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
@@ -47,7 +47,7 @@ get_header();
 					const newValue = imageIndex + value;
 					newValueItem = document.querySelector(".collection-gallery-item.collection-gallery-item-" + newValue);
 					if(newValue !==	 -1 && newValueItem){
-						document.querySelector("#SelectedThumbnail").src = newValueItem.dataset.imageValue;
+						document.querySelector("#SelectedThumbnail").srcset = getImage(newValueItem.dataset.imageSmall, newValueItem.dataset.imageMedium,newValueItem.dataset.imageLarge);
 						newValueItem.classList.add("active")
 						document.querySelector(".collection-gallery-item.collection-gallery-item-" + imageIndex).classList.remove("active")
 						imageIndex = newValue;
@@ -57,7 +57,7 @@ get_header();
 					const newValue = 0;
 					newValueItem = document.querySelector(".collection-gallery-item.collection-gallery-item-" + newValue);
 					if(newValue !==	 -1 && newValueItem){
-						document.querySelector("#SelectedThumbnail").src = newValueItem.dataset.imageValue;
+						document.querySelector("#SelectedThumbnail").srcset = getImage(newValueItem.dataset.imageSmall, newValueItem.dataset.imageMedium,newValueItem.dataset.imageLarge);
 						newValueItem.classList.add("active")
 						document.querySelector(".collection-gallery-item.collection-gallery-item-" + imageIndex).classList.remove("active")
 						imageIndex = newValue;
@@ -69,7 +69,7 @@ get_header();
 					const newValue = imageIndex + value;
 					newValueItem = document.querySelector(".collection-gallery-item.collection-gallery-item-" + newValue);
 					if(newValue !==	 -1 && newValueItem){
-						document.querySelector("#SelectedThumbnail").src = newValueItem.dataset.imageValue;
+						document.querySelector("#SelectedThumbnail").srcset = getImage(newValueItem.dataset.imageMedium,newValueItem.dataset.imageLarge);
 						newValueItem.classList.add("active")
 						document.querySelector(".collection-gallery-item.collection-gallery-item-" + imageIndex).classList.remove("active")
 						imageIndex = newValue;
@@ -79,7 +79,7 @@ get_header();
 					const newValue = parseInt(totalGalleryImages) - 1;
 					newValueItem = document.querySelector(".collection-gallery-item.collection-gallery-item-" + newValue);
 					if(newValue !==	 -1 && newValueItem){
-						document.querySelector("#SelectedThumbnail").src = newValueItem.dataset.imageValue;
+						document.querySelector("#SelectedThumbnail").srcset = getImage(newValueItem.dataset.imageMedium,newValueItem.dataset.imageLarge);
 						newValueItem.classList.add("active")
 						document.querySelector(".collection-gallery-item.collection-gallery-item-" + imageIndex).classList.remove("active")
 						imageIndex = newValue;
@@ -88,30 +88,32 @@ get_header();
 			}
 
 		}
-		function changeImage(caption,smallImage,largeImage,selected,index){
+		function changeImage(caption,smallImage, mediumImage,largeImage,selected,index){
 			imageIndex = index;
-			removeActiveLinks();	
-			document.querySelector("#SelectedThumbnail").src = smallImage;
-			let isSmall = true;
-			document.querySelector("#SelectedThumbnail").onload = function(){
-				if(isSmall){
-					document.querySelector("#SelectedThumbnail").src = largeImage;
-					isSmall = false;	
-				}
-				console.log(document.querySelector("#SelectedThumbnail").complete)		
-			}
-			
-			
+			removeActiveLinks();
+			document.querySelector("#SelectedThumbnail").srcset = getImage(smallImage, mediumImage,largeImage);
+			// let isSmall = true;
+			// document.querySelector("#SelectedThumbnail").onload = function(){
+			// 	if(isSmall){
+			// 		document.querySelector("#SelectedThumbnail").src = largeImage;
+			// 		isSmall = false;
+			// 	}
+			// 	console.log(document.querySelector("#SelectedThumbnail").complete)
+			// }
+
+
 			if(document.querySelector("#injiri-caption")) document.querySelector("#injiri-caption").textContent = caption;
 			if(document.querySelector("#injiri-caption-mobile")) document.querySelector("#injiri-caption-mobile").textContent = caption;
 			selected.classList.add('active');
-			console.log("changed")
 			if(document.querySelector('html').clientWidth < 769){
 				if(document.querySelector('html').scrollTop) document.querySelector('html').scrollTop = document.querySelector('.placeholder-image-block').offsetTop - 20	;
 				if(document.querySelector('body').scrollTop) document.querySelector('body').scrollTop = document.querySelector('.placeholder-image-block').offsetTop - 20	;
 			}
 		}
-		
+		function getImage(smallImage, mediumImage,largeImage){
+			// console.log(largeImage)
+			return `${smallImage} 1400w, ${mediumImage} 1660w, ${largeImage} 3x`;
+		}
 		function removeActiveLinks(type){
 			let allLinks = document.querySelectorAll(".collection-gallery-item");
 			for(let i=0; i < allLinks.length ; i++){
@@ -131,7 +133,7 @@ get_header();
 				if(document.querySelector('.collection-gallery-wrapper').clientWidth < document.querySelector('.collection-gallery-wrapper').scrollWidth){
 					document.querySelectorAll('.collection-gallery-arrows')[0].classList.add('active');
 					document.querySelectorAll('.collection-gallery-arrows')[1].classList.add('active');
-				}	
+				}
 				else{
 					if(document.querySelector('.collection-gallery-arrows')){
 						document.querySelector('.collection-gallery-arrows').classList.remove('active');
@@ -140,7 +142,7 @@ get_header();
 			}
 		};
 
-		
+
 		// document.querySelector(".collection-gallery-wrapper").addEventListener("load",checkForArrows)
 		// if ( !!(window.addEventListener) )
 		// window.addEventListener("DOMContentLoaded", checkForArrows)
